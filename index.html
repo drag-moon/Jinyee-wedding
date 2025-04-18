@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>결정사</title>
+
+  	<!-- fullPage.js -->
+  	<link rel="stylesheet" href="css/fullpage.min.css">
+  	<script src="js/fullpage.min.js"></script>
+	
+  	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  	<script src="js/main.js"></script>
+	
+	<!-- 아코디언메뉴 js -->
+	<script src="js/jquery-1.7.2.min.js"></script>
+		
+  	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/common.css">
+  	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/nav.css">
+	
+	<!-- Swiper 메인 section2 슬라이드 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+	<script>
+	  window.addEventListener('load', function () {
+		new Swiper('.section2-slider', {
+		  slidesPerView: 1.2, // auto 대신 고정 값
+  		  spaceBetween: 10, 
+		  grabCursor: true,
+		  freeMode: true,
+		  scrollbar: {
+			el: '.swiper-scrollbar',
+			hide: false,
+			draggable: true,
+		  },
+		  breakpoints: {
+			768: {
+			  slidesPerView: 2.4,
+			  spaceBetween: 50
+			}
+		  }
+		});
+	  });
+	</script>
+	
+	
+	
+</head>
+	
+<body>	
+
+<!-- PC 메뉴 -->
+<header class="header">
+	<div class="inner">    
+		<h1 class="logo">OpenMatch</h1>
+    	<nav class="gnb">
+		  	<ul class="pc-menu">
+				<li>회사소개</li>
+				<li>서비스소개</li>
+				<li>오픈매칭</li>
+				<li>상담신청</li>
+				<li>커뮤니티</li>
+				<li>마이페이지</li>
+		  	</ul>
+    	</nav>
+    	<div class="auth-menu">
+      		<span>로그인</span> | <span>회원가입</span>
+    	</div>
+  	</div>
+
+	<!-- 전체 서브메뉴 (공통으로 한번에 노출) -->
+	<div class="all-submenu">
+    	<div class="submenu-group">
+			<ul>
+				<li onClick="location.href='/'">결정사 소개</li>
+                <li onClick="location.href='/'">결정사 특별함</li>
+		  </ul>
+		  <ul>
+				<li onClick="location.href='/'">가입만남절차</li>
+				<li onClick="location.href='/'">매칭시스템 안내</li>
+				<li onClick="location.href='/'">가입자격안내</li>
+				<li onClick="location.href='/'">인증서류안내</li>
+				<li onClick="location.href='/'">비용안내</li>
+		  </ul>
+		  <ul>
+				<li onClick="location.href='/'">매칭리스트</li>
+		  </ul>
+		  <ul>
+				<li onClick="location.href='/'">빠른상담</li>
+				<li onClick="location.href='/'">자주묻는질문</li>
+		  </ul>
+		  <ul>
+				<li onClick="location.href='/'">공지사항</li>
+				<li onClick="location.href='/'">매칭커플스토리</li>
+				<li onClick="location.href='/'">성혼커플스토리</li>
+		  </ul>
+		  <ul>
+				<li onClick="location.href='/'">내정보 관리</li>
+				<li onClick="location.href='/'">매칭현황</li>
+				<li onClick="location.href='/'">지인/친구소개</li>
+				<li onClick="location.href='/'">매칭머니</li>
+		  </ul>
+    	</div>
+  	</div>
+	<!-- //전체 서브메뉴 (공통으로 한번에 노출) -->
+</header>
+<!-- //PC 메뉴 -->
+	
+<!-- 모바일 메뉴 -->
+<div class="header_m">
+	
+	<h1><a href="/"><img src="images/common/logo.png" alt="결정사"></a></h1>
+	
+	<!-- 햄버거 버튼 -->
+	<div class="mobile-menu-button">
+		<span class="hamburger-icon">☰</span>
+	</div>
+	<!-- //햄버거 버튼 -->
+	
+    <!-- 모바일 메뉴 전체 -->
+    <div class="mobile-menu">
+      	<div class="top-bar">
+			<!--모바일로그인시작-->
+			<div class="login_w">
+				<div class="login_bg">
+					<a href="/sub/members/login.asp"><img src="images/common/loginicon.png" alt="login"/> 로그인 하세요</a>
+					<span class="close-mobile-menu">✕</span>
+				</div>
+				<div class="join_bg">
+					<ul>
+						<li><a href="/sub/members/join01.asp">회원가입</a></li>
+						<li><a href="/sub/members/edit_pw.asp">마이페이지</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--모바일로그인끝-->
+      	</div>					
+      	<!--모바일카테고리 시작-->
+        <script src="js/jquery.accordionMenu.js" type="text/javascript"></script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $('ul').accordion();
+        });
+        </script>
+
+        <ul class="accordion">
+            <li><a href="#menu01">회사소개</a>
+                <ul>	
+                    <li><a href="/">결정사 소개</a></li>
+                    <li><a href="/">결정사 특별함</a></li>
+                </ul>
+            </li>
+            <li><a href="#menu02">서비스소개</a>
+                <ul>
+                    <li><a href="/">가입만남절차</a></li>
+                    <li><a href="/">매칭시스템 안내</a></li>
+                    <li><a href="/">가입자격안내</a></li>
+                    <li><a href="/">인증서류안내</a></li>
+                    <li><a href="/">비용안내</a></li>
+                </ul>
+			</li>
+            <li><a href="#menu03">오픈매칭</a>
+                <ul>
+                    <li><a href="/">매칭리스트</a></li>
+                </ul>
+			</li>
+            <li><a href="#menu04">상담신청</a>
+                <ul>
+                    <li><a href="/">빠른상담신청</a></li>
+					<li><a href="/">자주묻는질문</a></li>
+                </ul>
+			</li>
+            <li><a href="#menu05">커뮤니티</a>
+                <ul>
+                    <li><a href="/">공지사항</a></li>
+					<li><a href="/">매칭커플스토리</a></li>
+					<li><a href="/">성혼커플스토리</a></li>
+                </ul>
+			</li>
+            <li><a href="#menu06">마이페이지</a>
+                <ul>
+                    <li><a href="/">내정보관리</a></li>
+					<li><a href="/">매칭현황</a></li>
+					<li><a href="/">지인/친구소개</a></li>
+					<li><a href="/">매칭머니</a></li>
+                </ul>
+			</li>
+        </ul>
+        <!--//모바일카테고리 메뉴끝-->
+    </div>
+	<!-- //모바일 메뉴 전체 -->
+</div>
+<!-- //모바일 메뉴 -->	
+	
+
+
+	
+	
+
+	
+	
+<div id="fullpage">
+    <section class="section section1">
+	  <div class="slide-wrapper">
+		<div class="slide-container">
+		  <div class="slide-content slide1">
+			<div class="text-wrap">
+			  <h2>가입비 부담 없이 시작</h2>
+			  <p>회원가입 시 별도의 가입비 없이,<br>합리적으로 이용할 수 있는 결혼정보 서비스</p>
+			  <div class="custom-slide-nav">
+				<span class="nav-dot active" data-index="0"></span>
+				<span class="nav-dot" data-index="1"></span>
+				<span class="nav-dot" data-index="2"></span>
+			  </div>
+			</div>
+		  </div>
+		  <div class="slide-content slide2">
+			<div class="text-wrap">
+			  <h2>자유로운 셀프 매칭</h2>
+			  <p>매니저 개입 없이 편하게 진행되는<br>기존과는 다른 새로운 매칭 시스템</p>
+			  <div class="custom-slide-nav">
+				<span class="nav-dot" data-index="0"></span>
+				<span class="nav-dot active" data-index="1"></span>
+				<span class="nav-dot" data-index="2"></span>
+			  </div>
+			</div>
+		  </div>
+		  <div class="slide-content slide3">
+			<div class="text-wrap">
+			  <h2>합리적인 만남 비용</h2>
+			  <p>한 번의 만남에 10만 원,<br>과도한 비용 부담 없이 실속 있는 서비스 제공</p>
+			  <div class="custom-slide-nav">
+				<span class="nav-dot" data-index="0"></span>
+				<span class="nav-dot" data-index="1"></span>
+				<span class="nav-dot active" data-index="2"></span>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+
+
+    <section class="section section2">
+	  <div class="section2-inner">
+		<!-- 텍스트 영역 -->
+		<div class="section2-text">
+		  <h2>오픈매치에서만<br class="pc">누릴 수<br class="m"> 있는 <br class="pc">차별점 4가지</h2>
+		  <p>형식적인 만남이 아닌, 진짜 인연을 위한<br>새로운 방식의 매칭을 제안합니다.</p>
+		</div>
+
+		<!-- 슬라이더 -->
+		<div class="section2-slider swiper">
+		  <div class="swiper-wrapper">
+			<div class="swiper-slide">
+			  <img src="images/main/section2_slideimg01.jpg" alt="가입비 없음">
+			  <h3>가입비 없음</h3>
+			  <p>회원가입에 비용이 들지 않아,<br>누구나 부담 없이 시작할 수 있습니다.</p>
+			</div>
+			<div class="swiper-slide">
+			  <img src="images/main/section2_slideimg02.jpg" alt="셀프 매칭 시스템">
+			  <h3>셀프 매칭 시스템</h3>
+			  <p> 직접 프로필을 보고 원하는 상대와<br>자유롭게 매칭할 수 있습니다.</p>
+			</div>
+			<div class="swiper-slide">
+			  <img src="images/main/section2_slideimg03.jpg" alt="합리적인 만남 비용">
+			  <h3>합리적인 만남 비용</h3>
+			  <p>1회 만남 비용 10만 원으로, <br>실속 있는 만남이 가능합니다.</p>
+			</div>
+			<div class="swiper-slide">
+			  <img src="images/main/section2_slideimg04.jpg" alt="투명한 정보 공개">
+			  <h3>투명한 정보 공개</h3>
+			  <p>상대방의 핵심 정보가 명확히 제공되어,<br>신뢰 기반의 만남이 가능합니다.</p>
+			</div>
+		  </div>
+		  <div class="swiper-scrollbar"></div>
+		</div>
+	  </div>
+	</section>
+
+
+    <section class="section section3">
+      <h2>오픈매치 가입안내</h2>
+      <div class="guide-icons">
+        <div>가입만남절차</div>
+        <div>회원가입자격</div>
+        <div>타사와 차이점</div>
+        <div>인증필요서류</div>
+        <div>만남비용안내</div>
+      </div>
+    </section>
+
+    <section class="section section4">
+      <h2>매니저 개입 없는 셀프 매칭 시스템</h2>
+      <p>PROFILE → SELF MATCHING</p>
+    </section>
+
+    <section class="section section5">
+      <h2>고객 서비스 센터</h2>
+      <p>고객님들의 편리하고 원활한 이용을 위해<br>다양한 문의사항에 대해 친절히 안내해드립니다.</p>
+      <div class="service-btns">
+        <button>간편상담</button>
+        <button>공지사항</button>
+        <button>Q&A</button>
+        <button>카톡상담</button>
+      </div>
+    </section>
+</div>
+	
+</body>
+</html>

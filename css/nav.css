@@ -1,0 +1,300 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 기본 헤더 스타일 (배경 없음, 흰 글씨) */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+  background: transparent;
+  z-index: 9999;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+.header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.pc-menu {
+  display: flex;
+  gap: 8rem;
+}
+
+.pc-menu li {
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+  color: white;
+}
+
+.auth-menu span {
+  margin: 0 0.5rem;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* 헤더 활성화 시 (hover 시) */
+.header.hovered {
+  background: white;
+}
+
+.header.hovered .logo {
+  color: #d40000;
+}
+
+.header.hovered .pc-menu li,
+.header.hovered .auth-menu span {
+  color: #333333;
+}
+
+/* 전체 서브메뉴 */
+.all-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background: white;
+  padding: 2rem 4rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid #f6f6f6;
+  z-index: 9998;
+  box-sizing: border-box;
+}
+
+.submenu-group {
+  width: 1230px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.submenu-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 4.3rem;
+  width: 16.6666%;
+}
+
+.submenu-group ul:nth-child(1) {
+  color: #333;
+  padding: 0.3rem 0;
+  margin-left: 3.2rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.submenu-group ul:nth-child(3) {
+  color: #333;
+  padding: 0.3rem 0;
+   margin-left: 5.6rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+
+.submenu-group li {
+  color: #333;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.submenu-group li.on {
+  color: #d40000;
+  font-weight: 600;
+}
+
+.submenu-group li:hover,.submenu-group li:active{
+  color: #d40000;
+}
+
+.header_m {display: none !important}
+
+
+@media all and (max-width:1300px) and (min-width:768px) {
+.header { display: none;}
+.pc-menu { display: none;}
+.auth-menu { display: none !important;}	
+
+.header_m {display: block !important}
+	
+/*주메뉴_모바일*/
+.header_m {width: 100%; border-bottom: 1px solid #d2d2d2; position: fixed; height: 64px; background: #ffffff; z-index: 99999;  }
+.header_m h1 {text-align: center; padding-top:20px; padding-bottom: 20px;}
+.header_m h1 img {width: 140px}
+	
+/* 햄버거 버튼 위치 */
+.mobile-menu-button {
+	display: block;
+  	cursor: pointer;
+  	font-size: 2rem;
+  	margin-left: 1rem;
+	color: #333333;
+	top: 10px;
+	position: absolute;
+}
+
+/* 모바일 메뉴 - 왼쪽에서 슬라이드 */
+.mobile-menu {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #000;
+  z-index: 9999;
+  transition: left 0.3s ease;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+/* 상단 로그인/닫기 영역 */
+.mobile-menu .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.close-mobile-menu {
+	position: absolute;
+  	cursor: pointer;
+  	font-size: 1.5rem;
+	top: 15px; right: 20px;
+}
+
+
+/* 메뉴 아코디언 */
+.header_m .login_w {width: 100%; float: left}
+	
+.header_m .login_bg { background:#f75454; padding: 1rem 0; color:#ffffff;  width: 100%; text-align:left; font-size: 1.3rem;   box-sizing: border-box}
+.header_m .login_bg a { color:#ffffff; padding-left: 55px; font-weight: 600}
+.header_m .login_bg img {top: 10px; left: 10px; display: block; position: absolute; width: 35px;}
+	
+.header_m .join_bg {float: left; width: 100%; background: #f5f5f5;}
+.header_m .join_bg ul { float: left; width: 100%; border-bottom: 1px solid #dbdbdb; padding:12px 0}	
+.header_m .join_bg li { width: 50%; float: left; color: #333333; text-align: center; }
+.header_m .join_bg li:nth-child(1)::after{content: '|'; float: right; color: #dbdbdb}
+.header_m .join_bg li a:link { color: #333333}
+.header_m .join_bg li a:visited { color: #333333}	
+
+.accordion {list-style-type:none;padding:0;margin:0; clear: both; background: #ffffff;}
+.accordion ul {padding:0;margin:0;width: 100%;}
+.accordion li {cursor:pointer;list-style-type:none; margin:0;width:100%; padding: 0; color: #333333; border-bottom: 1px solid #dbdbdb;}
+.accordion li.active > a { background: url('../images/common/minus.png') no-repeat 94% 50%; background-size: 10px; color: #333333; letter-spacing: -1px; font-weight: 600}
+.accordion li div {padding:0px;clear:both;float:left;width:100%;}
+.accordion a { font-size:1.1rem ;color:#333333;padding: 20px; display:block;cursor:pointer;background: url("../images/common/plus.png") no-repeat 94% 50%; background-size: 10px;  letter-spacing: -1px; font-weight: 600}
+.accordion a:visited { font-size:1.1rem ;color:#333333;padding: 20px; display:block;cursor:pointer;background:url('../images/common/plus.png') no-repeat 94% 50%; background-size: 10px;  letter-spacing: -1px; font-weight: 600}
+
+.accordion li ul li {background: #ffffff; font-size:0.95rem; color: #333333; border-bottom: 1px dashed #dbdbdb; }
+.accordion li ul li:last-child { border: none}
+.accordion li ul li a{background:#ffffff ; padding : 15px 15px 15px 30px; color: #333333; letter-spacing: -1px; font-size:0.95rem; font-weight: 400}	
+.accordion li ul li a:visited { background:#ffffff ;padding : 15px 15px 15px 30px; color: #333333;  letter-spacing: -1px ; font-size:0.95rem; font-weight: 400}
+.accordion li ul li.active > a {color:#333333; letter-spacing: -1px ; background: none; font-weight: 400; font-size:0.95rem }
+	
+}
+
+@media screen and (max-width: 768px) {
+.header { display: none;}
+.pc-menu { display: none;}
+.auth-menu { display: none !important;}	
+
+.header_m {display: block !important}
+	
+/*주메뉴_모바일*/
+.header_m {width: 100%; border-bottom: 1px solid #d2d2d2; position: fixed; height: 64px; background: #ffffff; z-index: 99999;  }
+.header_m h1 {text-align: center; padding-top:20px; padding-bottom: 20px;}
+.header_m h1 img {width: 140px}
+	
+/* 햄버거 버튼 위치 */
+.mobile-menu-button {
+	display: block;
+  	cursor: pointer;
+  	font-size: 2rem;
+  	margin-left: 1rem;
+	color: #333333;
+	top: 10px;
+	position: absolute;
+}
+
+/* 모바일 메뉴 - 왼쪽에서 슬라이드 */
+.mobile-menu {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #000;
+  z-index: 9999;
+  transition: left 0.3s ease;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+/* 상단 로그인/닫기 영역 */
+.mobile-menu .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.close-mobile-menu {
+	position: absolute;
+  	cursor: pointer;
+  	font-size: 1.5rem;
+	top: 15px; right: 20px;
+}
+
+
+/* 메뉴 아코디언 */
+.header_m .login_w {width: 100%; float: left}
+	
+.header_m .login_bg { background:#f75454; padding: 1rem 0; color:#ffffff;  width: 100%; text-align:left; font-size: 1.3rem;   box-sizing: border-box}
+.header_m .login_bg a { color:#ffffff; padding-left: 55px; font-weight: 600}
+.header_m .login_bg img {top: 10px; left: 10px; display: block; position: absolute; width: 35px;}
+	
+.header_m .join_bg {float: left; width: 100%; background: #f5f5f5;}
+.header_m .join_bg ul { float: left; width: 100%; border-bottom: 1px solid #dbdbdb; padding:12px 0}	
+.header_m .join_bg li { width: 50%; float: left; color: #333333; text-align: center; }
+.header_m .join_bg li:nth-child(1)::after{content: '|'; float: right; color: #dbdbdb}
+.header_m .join_bg li a:link { color: #333333}
+.header_m .join_bg li a:visited { color: #333333}	
+
+.accordion {list-style-type:none;padding:0;margin:0; clear: both; background: #ffffff;}
+.accordion ul {padding:0;margin:0;width: 100%;}
+.accordion li {cursor:pointer;list-style-type:none; margin:0;width:100%; padding: 0; color: #333333; border-bottom: 1px solid #dbdbdb;}
+.accordion li.active > a { background: url('../images/common/minus.png') no-repeat 94% 50%; background-size: 10px; color: #333333; letter-spacing: -1px; font-weight: 600}
+.accordion li div {padding:0px;clear:both;float:left;width:100%;}
+.accordion a { font-size:1.1rem ;color:#333333;padding: 20px; display:block;cursor:pointer;background: url("../images/common/plus.png") no-repeat 94% 50%; background-size: 10px;  letter-spacing: -1px; font-weight: 600}
+.accordion a:visited { font-size:1.1rem ;color:#333333;padding: 20px; display:block;cursor:pointer;background:url('../images/common/plus.png') no-repeat 94% 50%; background-size: 10px;  letter-spacing: -1px; font-weight: 600}
+
+.accordion li ul li {background: #ffffff; font-size:0.95rem; color: #333333; border-bottom: 1px dashed #dbdbdb; }
+.accordion li ul li:last-child { border: none}
+.accordion li ul li a{background:#ffffff ; padding : 15px 15px 15px 30px; color: #333333; letter-spacing: -1px; font-size:0.95rem; font-weight: 400}	
+.accordion li ul li a:visited { background:#ffffff ;padding : 15px 15px 15px 30px; color: #333333;  letter-spacing: -1px ; font-size:0.95rem; font-weight: 400}
+.accordion li ul li.active > a {color:#333333; letter-spacing: -1px ; background: none; font-weight: 400; font-size:0.95rem }
+	
+}

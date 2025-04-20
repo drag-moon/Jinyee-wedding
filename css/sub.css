@@ -94,78 +94,44 @@ button { margin: 0; padding: 0; cursor: pointer;}
 .sub_top.sub06_01 { background: url("/images/common/titleimg06_01.jpg") no-repeat ; background-size: cover }
 
 
+/* 공통 드롭다운 */
+.nav-dropdown { display: flex; gap: 8px; }
+.dropdown { position: relative; }
+.dropdown-btn {
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;           /* 메뉴 글자 검정 */
+}
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: none;
+  z-index: 100;
+  width: max-content;
+}
+.dropdown-list li {
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #000;           /* 항목도 검정 */
+}
+.dropdown-list li:hover,
+.dropdown-list li.active {
+  background: #f0f0f0;
+}
 
+/* 2차는 첫에 숨김 */
+.second-dropdown { display: none; }
 
-
-
-/* ─── sub-nav ───────────────────────── */
-/* 2단 가로 레이아웃 */
-.sub-nav.two-col {
-	position: static;    /* flow에 따라 나타나도록 */
-	width: 100%;         /* 필요 시 조정 가능 */
-	border-bottom: 1px solid #ddd;
-	background: #fff;
-	display: flex;
-	z-index: 999;
-	margin-top: -1px;
-  }
-  .sub-nav.two-col .col1 {
-	width: 200px;           /* 원하는 너비로 조정 */
-	border-right: 1px solid #ddd;
-  }
-  .sub-nav.two-col .col2 {
-	flex: 1;
-	padding-left: 20px;     /* 1depth와 간격 */
-  }
   
-  /* 1depth 메뉴 */
-  .sub-nav.two-col .menu1 {
-	list-style: none;
-  }
-  .sub-nav.two-col .menu1 li {
-	cursor: pointer;
-	padding: 15px 20px;
-	font-size: 16px;
-	color: #333;
-	border-bottom: 1px solid #eee;
-  }
-  .sub-nav.two-col .menu1 li.active {
-	background: #f5f5f5;
-	font-weight: bold;
-  }
-  
-  /* 2depth 메뉴 */
-  .sub-nav.two-col .submenu2 {
-	list-style: none;
-	padding: 10px 0;
-  }
-  .sub-nav.two-col .submenu2 li a {
-	display: block;
-	padding: 8px 16px;
-	color: #555;
-	text-decoration: none;
-  }
-  .sub-nav.two-col .submenu2 li a:hover {
-	background: #f0f0f0;
-  }
-
-  /* 초기 상태: active(회사소개) 제외한 li 전부 숨김 */
-  .sub-nav.two-col .menu1 li:not(.active) {
-	display: none;
-  }
-  
-  /* jQuery slideDown 시 자연스러운 overflow 제어 */
-  .sub-nav.two-col .menu1 li {
-	overflow: hidden;
-  }
-
-  /* 1depth 초기 상태: active(회사소개) 제외 숨김 */
-  .sub-nav.two-col .menu1 li {
-	overflow: hidden;            /* slide 애니메이션용 */
-  }
-  .sub-nav.two-col .menu1 li:not(.active) {
-	display: none;
-  }
 
 
 

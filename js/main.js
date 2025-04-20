@@ -1,125 +1,140 @@
-// js/main.js
+// // js/main.js
+
 $(document).ready(function () {
-  // fullPage.js v2 초기화
+  initFullpage();
+  initAOS();
+  initPCMenu();
+  initSectionSlider();
+  initMobileMenu();
+  initAccordionMenu();
+  initSwiper();
+  initSubNavDropdowns();  // 1·2차 드롭다운
+});
+
+/* ─────────────────────────────────────────────────────────────────────── */
+/* 1. fullPage.js 초기화                                                 */
+function initFullpage() {
   $('#fullpage').fullpage({
     autoScrolling: true,
     scrollBar: false,
     navigation: true,
     navigationPosition: 'left',
     responsiveWidth: 768,
-    anchors: ['section1', 'section2', 'section3', 'section4', 'section5'],
-    navigationTooltips: ['시작', '차별점', '가입안내', '매칭시스템', '고객센터'],
+    anchors: ['section1','section2','section3','section4','section5'],
+    navigationTooltips: ['시작','차별점','가입안내','매칭시스템','고객센터'],
     showActiveTooltip: true,
-    /* ...other options... */
-    afterLoad: function(origin, destination, direction){
-      AOS.refreshHard();   // 섹션 전환 시 AOS 강제 재스캔
+    afterLoad: function(){
+      AOS.refreshHard();
     }
   });
+}
 
-  // fullPage.js 초기화 후에 AOS도 초기화
+/* 2. AOS 초기화                                                         */
+function initAOS() {
   AOS.init({
-    offset:         120,
-    delay:          0,
-    duration:       800,
-    easing:         'ease',
-    once:           false,
-    mirror:         false
+    offset:    120,
+    delay:     0,
+    duration:  800,
+    easing:    'ease',
+    once:      false,
+    mirror:    false
   });
-  
-  // PC 메뉴
+}
+
+/* 3. PC 헤더 메뉴                                                       */
+function initPCMenu() {
   let submenuTimer;
-  function isPC() {
-    return window.innerWidth > 768;
-  }
-  $('.header').on('mouseenter', function () {
-    if (isPC()) {
-      clearTimeout(submenuTimer);
-      $('.header').addClass('hovered');
-      $('.all-submenu').stop(true, true).slideDown(200);
-    }
-  }).on('mouseleave', function () {
-    if (isPC()) {
-      submenuTimer = setTimeout(() => {
-        $('.all-submenu').stop(true, true).slideUp(200, () => {
-          $('.header').removeClass('hovered');
-        });
-      }, 100);
-    }
-  });
-  $('.all-submenu').on('mouseenter', function () {
-    if (isPC()) {
-      clearTimeout(submenuTimer);
-      $('.header').addClass('hovered');
-      $('.all-submenu').stop(true, true).slideDown(200);
-    }
-  }).on('mouseleave', function () {
-    if (isPC()) {
-      submenuTimer = setTimeout(() => {
-        $('.all-submenu').stop(true, true).slideUp(200, () => {
-          $('.header').removeClass('hovered');
-        });
-      }, 100);
-    }
-  });
-  $(window).on('resize', function () {
+  function isPC() { return window.innerWidth > 768; }
+
+  $('.header')
+    .on('mouseenter', () => {
+      if (isPC()) {
+        clearTimeout(submenuTimer);
+        $('.header').addClass('hovered');
+        $('.all-submenu').stop(true,true).slideDown(200);
+      }
+    })
+    .on('mouseleave', () => {
+      if (isPC()) {
+        submenuTimer = setTimeout(()=>{
+          $('.all-submenu').stop(true,true)
+            .slideUp(200,()=>$('.header').removeClass('hovered'));
+        },100);
+      }
+    });
+
+  $('.all-submenu')
+    .on('mouseenter', ()=> clearTimeout(submenuTimer))
+    .on('mouseleave', ()=> submenuTimer = setTimeout(()=>{
+      $('.all-submenu').stop(true,true)
+        .slideUp(200,()=>$('.header').removeClass('hovered'));
+    },100) );
+
+  $(window).on('resize', ()=>{
     if (!isPC()) {
       $('.header').removeClass('hovered');
       $('.all-submenu').hide();
     }
   });
+}
 
-  // section1 슬라이더
-  (function () {
-    let currentSlide = 0;
-    const $container = $('.slide-container');
-    const $slides = $('.slide-content');
+/* 4. section1 슬라이더                                                  */
+function initSectionSlider() {
+  let current=0;
+  const $container = $('.slide-container'),
+        $slides    = $('.slide-content');
 
-    function moveSlide(index) {
-      $container.css('transform', `translateX(-${index * 100}vw)`);
-      $('.nav-dot').removeClass('active');
-      $(`.nav-dot[data-index=${index}]`).addClass('active');
-      $slides.removeClass('shrink reveal');
-      const $target = $slides.eq(index);
-      $target.css('background-size', '120%');
-      setTimeout(() => {
-        $target.addClass('shrink');
-        setTimeout(() => $target.addClass('reveal'), 1500);
-      }, 850);
-    }
+  function move(idx){
+    $container.css('transform',`translateX(-${idx*100}vw)`);
+    $('.nav-dot').removeClass('active');
+    $(`.nav-dot[data-index=${idx}]`).addClass('active');
+    $slides.removeClass('shrink reveal');
+    const $t = $slides.eq(idx);
+    $t.css('background-size','120%');
+    setTimeout(()=>{
+      $t.addClass('shrink');
+      setTimeout(()=> $t.addClass('reveal'),1500);
+    },850);
+  }
 
-    $(document).on('click', '.nav-dot', function () {
-      currentSlide = $(this).data('index');
-      moveSlide(currentSlide);
+  $(document).on('click','.nav-dot', function(){
+    current = $(this).data('index');
+    move(current);
+  });
+
+  let startX, dragging=false;
+  $('.slide-content')
+    .on('mousedown touchstart', e=>{
+      dragging=true;
+      startX = e.pageX || e.originalEvent.touches[0].pageX;
+    })
+    .on('mouseup touchend', e=>{
+      if (!dragging) return;
+      const endX = e.pageX||e.originalEvent.changedTouches[0].pageX,
+            diff = startX - endX;
+      if (Math.abs(diff)>50) {
+        current = (current + (diff>0?1:-1) + $slides.length) % $slides.length;
+        move(current);
+      }
+      dragging=false;
     });
 
-    let startX = 0, isDragging = false;
-    $('.slide-content')
-      .on('mousedown touchstart', e => {
-        isDragging = true;
-        startX = e.pageX || e.originalEvent.touches[0].pageX;
-      })
-      .on('mouseup touchend', e => {
-        if (!isDragging) return;
-        const endX = e.pageX || e.originalEvent.changedTouches[0].pageX;
-        const diff = startX - endX;
-        if (Math.abs(diff) > 50) {
-          currentSlide = (currentSlide + (diff > 0 ? 1 : -1) + $slides.length) % $slides.length;
-          moveSlide(currentSlide);
-        }
-        isDragging = false;
-      });
+  move(0);
+}
 
-    moveSlide(0);
-  })();
+/* 5. 모바일 메뉴                                                      */
+function initMobileMenu() {
+  $('.mobile-menu-button').click(()=>$('.mobile-menu').addClass('active'));
+  $('.close-mobile-menu').click(()=>$('.mobile-menu').removeClass('active'));
+}
 
-  // 모바일 메뉴
-  $('.mobile-menu-button').click(() => $('.mobile-menu').addClass('active'));
-  $('.close-mobile-menu').click(() => $('.mobile-menu').removeClass('active'));
-
-  // 모바일 아코디언
+/* 6. 모바일 아코디언 (제공된 플러그인)                                   */
+function initAccordionMenu() {
   $('ul.accordion').accordion();
+}
 
-  // Swiper 초기화 (section2)
+/* 7. Swiper (section2)                                                */
+function initSwiper() {
   window.addEventListener('load', () => {
     new Swiper('.section2-slider', {
       slidesPerView: 1.2,
@@ -132,78 +147,85 @@ $(document).ready(function () {
         hide: false
       },
       breakpoints: {
-        768: {
-          slidesPerView: 2.4,
-          spaceBetween: 50
-        }
-      }
-    });
-  });  
-   
-  $(function(){
-    // 1depth 클릭 시
-    $('.sub-nav.two-col .menu1 li').on('click', function(){
-      var target = $(this).data('target');
-  
-      // 1depth active 교체
-      $(this)
-        .addClass('active')
-        .siblings().removeClass('active');
-  
-      // 2depth 보이기/숨기기
-      $('.sub-nav.two-col .submenu2')
-        .hide();
-      $('#'+target).show();
-    });
-  });
-
-  $(function(){
-    var $menu1 = $('.sub-nav.two-col .menu1');
-  
-    // (안전망) JS 로도 숨겨두기
-    $menu1.find('li:not(.active)').hide();
-  
-    // “회사소개” 클릭 시, 나머지 메뉴 슬라이드 다운
-    $menu1.find('li.active').on('click', function(){
-      $menu1.find('li:not(.active)').stop(true).slideDown(300);
-    });
-  });
-
-  $(function(){
-    var $menu1    = $('.sub-nav.two-col .menu1'),
-        $items    = $menu1.find('li'),
-        $submenus = $('.sub-nav.two-col .submenu2');
-  
-    // 초기: active 외엔 숨겨두기
-    $items.not('.active').hide();
-  
-    // 1depth 클릭 토글/선택
-    $menu1.on('click', 'li', function(){
-      var $clicked = $(this),
-          id        = $clicked.data('target'),
-          visibleCount = $items.filter(':visible').length;
-  
-      if (visibleCount === 1) {
-        // [collapsed] → 펼치기
-        $items.stop(true).slideDown(200);
-        // 오른쪽 서브메뉴는 그대로 유지
-      } else {
-        // [expanded] → 선택된 항목만 남기고 접기
-        $items.not($clicked)
-              .stop(true)
-              .slideUp(200)
-              .removeClass('active');
-  
-        $clicked
-          .addClass('active')
-          .stop(true)
-          .slideDown(200); // 혹시 숨겨졌다면
-  
-        // 오른쪽 서브메뉴 토글
-        $submenus.hide();
-        $('#'+ id).show();
+        768: { slidesPerView: 2.4, spaceBetween: 50 }
       }
     });
   });
+}
 
-});
+/* 8. 1차→2차 드롭다운                                                 */
+function initSubNavDropdowns() {
+  const $firstBtn   = $('.first-btn'),
+        $firstList  = $('.first-list'),
+        $secondDrop = $('.second-dropdown'),
+        $secondBtn  = $('.second-btn'),
+        $secondList = $('.second-list');
+
+  // 초기 숨김
+  $firstList.hide();
+  $secondDrop.hide();
+  $secondList.find('li').hide();
+
+  // 기본값: 회사소개 → 결정사 소개
+  (function setDefaults(){
+    const key = 'company';
+    const $fi = $firstList.find(`li[data-menu="${key}"]`).addClass('active');
+    $firstBtn.text($fi.text()+' ▼');
+    const $subs = $secondList.find(`li[data-panel="${key}"]`);
+    const $fst = $subs.first().addClass('active');
+    $secondBtn.text($fst.text()+' ▼');
+    $secondDrop.show();
+    $secondList.hide();
+    $subs.show();
+  })();
+
+  // 1차 버튼 토글
+  $firstBtn.on('click', e=>{
+    e.stopPropagation();
+    $firstList.slideToggle(200);
+    $secondDrop.hide();
+  });
+
+  // 1차 메뉴 선택
+  $firstList.on('click','li', function(e){
+    e.stopPropagation();
+    const key = $(this).data('menu'),
+          txt = $(this).text();
+    // 반영
+    $firstList.find('li').removeClass('active');
+    $(this).addClass('active');
+    $firstBtn.text(txt+' ▼');
+    $firstList.slideUp(200);
+
+    // 2차 준비
+    const $all2 = $secondList.find('li').hide();
+    const $subs = $all2.filter(`[data-panel="${key}"]`).show();
+    // 첫 항목 자동 선택
+    const $fst = $subs.first().addClass('active');
+    $secondBtn.text($fst.text()+' ▼');
+    $secondDrop.show();
+    $secondList.hide();
+  });
+
+  // 2차 버튼 토글
+  $secondBtn.on('click', e=>{
+    e.stopPropagation();
+    $secondList.slideToggle(200);
+  });
+
+  // 2차 메뉴 선택
+  $secondList.on('click','li', function(e){
+    e.stopPropagation();
+    $secondList.find('li').removeClass('active');
+    $(this).addClass('active');
+    $secondBtn.text($(this).text()+' ▼');
+    $secondList.slideUp(200);
+  });
+
+  // 외부 클릭 시 닫기
+  $(document).on('click', ()=>{
+    $firstList.slideUp(200);
+    $secondList.slideUp(200);
+    // $secondDrop.hide();
+  });
+}

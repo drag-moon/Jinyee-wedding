@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>결정사</title>
+
+  <!-- fullPage.js v2.9.7 (MIT 라이선스, 무료) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.7/dist/jquery.fullpage.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.7/dist/jquery.fullpage.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/sub.css">
+
+  <!-- Swiper (section2 슬라이더) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- 아코디언메뉴 js -->
+  <script src="/js/jquery.accordionMenu.js"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  
+  <!-- 메인 JS -->
+  <script src="/js/main.js"></script>
+</head>
+
+<body class="subpage">	
+
+  <!-- PC 메뉴 -->
+  <header class="header">
+    <div class="inner">    
+      <h1 class="logo">OpenMatch</h1>
+      <nav class="gnb">
+        <ul class="pc-menu">
+          <li>회사소개</li>
+          <li>서비스소개</li>
+          <li>오픈매칭</li>
+          <li>상담신청</li>
+          <li>커뮤니티</li>
+          <li>마이페이지</li>
+        </ul>
+      </nav>
+      <div class="auth-menu">
+        <span>로그인</span> | <span>회원가입</span>
+      </div>
+    </div>
+
+    <!-- 전체 서브메뉴 -->
+    <div class="all-submenu">
+      <div class="submenu-group">
+        <ul>
+          <li onClick="location.href='/'">결정사 소개</li>
+          <li onClick="location.href='/'">결정사 특별함</li>
+        </ul>
+        <ul>
+          <li onClick="location.href='/'">가입만남절차</li>
+          <li onClick="location.href='/'">매칭시스템 안내</li>
+          <li onClick="location.href='/'">가입자격안내</li>
+          <li onClick="location.href='/'">인증서류안내</li>
+          <li onClick="location.href='/'">비용안내</li>
+        </ul>
+        <ul>
+          <li onClick="location.href='/'">매칭리스트</li>
+        </ul>
+        <ul>
+          <li onClick="location.href='/'">빠른상담</li>
+          <li onClick="location.href='/'">자주묻는질문</li>
+        </ul>
+        <ul>
+          <li onClick="location.href='/'">공지사항</li>
+          <li onClick="location.href='/'">매칭커플스토리</li>
+          <li onClick="location.href='/'">성혼커플스토리</li>
+        </ul>
+        <ul>
+          <li onClick="location.href='/'">내정보 관리</li>
+          <li onClick="location.href='/'">매칭현황</li>
+          <li onClick="location.href='/'">지인/친구소개</li>
+          <li onClick="location.href='/'">매칭머니</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- //PC 메뉴 -->
+
+  <!-- 모바일 메뉴 -->
+  <div class="header_m">
+    <h1><a href="/"><img src="/images/common/logo.png" alt="결정사"></a></h1>
+    <div class="mobile-menu-button">
+      <span class="hamburger-icon">☰</span>
+    </div>
+    <div class="mobile-menu">
+      <div class="top-bar">
+        <div class="login_w">
+          <div class="login_bg">
+            <a href="/sub/members/login.asp"><img src="/images/common/loginicon.png" alt="login"/> 로그인 하세요</a>
+            <span class="close-mobile-menu">✕</span>
+          </div>
+          <div class="join_bg">
+            <ul>
+              <li><a href="/sub/members/join01.asp">회원가입</a></li>
+              <li><a href="/sub/members/edit_pw.asp">마이페이지</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <ul class="accordion">
+        <li><a href="#menu01">회사소개</a>
+          <ul>  
+            <li><a href="/">결정사 소개</a></li>
+            <li><a href="/">결정사 특별함</a></li>
+          </ul>
+        </li>
+        <li><a href="#menu02">서비스소개</a>
+          <ul>
+            <li><a href="/">가입만남절차</a></li>
+            <li><a href="/">매칭시스템 안내</a></li>
+            <li><a href="/">가입자격안내</a></li>
+            <li><a href="/">인증서류안내</a></li>
+            <li><a href="/">비용안내</a></li>
+          </ul>
+        </li>
+        <li><a href="#menu03">오픈매칭</a>
+          <ul>
+            <li><a href="/">매칭리스트</a></li>
+          </ul>
+        </li>
+        <li><a href="#menu04">상담신청</a>
+          <ul>
+            <li><a href="/">빠른상담신청</a></li>
+            <li><a href="/">자주묻는질문</a></li>
+          </ul>
+        </li>
+        <li><a href="#menu05">커뮤니티</a>
+          <ul>
+            <li><a href="/">공지사항</a></li>
+            <li><a href="/">매칭커플스토리</a></li>
+            <li><a href="/">성혼커플스토리</a></li>
+          </ul>
+        </li>
+        <li><a href="#menu06">마이페이지</a>
+          <ul>
+            <li><a href="/">내정보관리</a></li>
+            <li><a href="/">매칭현황</a></li>
+            <li><a href="/">지인/친구소개</a></li>
+            <li><a href="/">매칭머니</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- //모바일 메뉴 -->	
+
+  <div class="cont_n">
+		
+    <!--상단타이틀과이미지-->
+    <div class="sub_top sub06_01">
+        <div class="inner_box">
+            <div class="sub_top_text">
+                <em data-aos="fade-up2" data-aos-duration="1000">openmatch mypage</em>
+                <h2 data-aos="fade-down2" data-aos-duration="800">오픈매칭</h2>
+                <p data-aos="fade-up2" data-aos-duration="1000" >변경하실 정보를 확인해주세요</p>
+            </div>
+        </div>        
+    </div>
+    <!--//상단타이틀과이미지끝-->
+    
+    <!-- ─── 중간 가로 2단 드롭다운 서브네비 ─── -->
+    <nav class="sub-nav two-col">
+        <!-- 1depth 컬럼 -->
+        <div class="col1">
+          <ul class="menu1">
+            <li data-target="company" class="active">회사소개</li>
+            <li data-target="service">서비스소개</li>
+            <li data-target="openmatch">오픈매칭</li>
+          </ul>
+        </div>
+      
+        <!-- 2depth 컬럼 -->
+        <div class="col2">
+          <!-- 회사소개 자식 -->
+          <ul id="company" class="submenu2">
+            <li><a href="/">결정사 소개</a></li>
+            <li><a href="/">결정사 특별함</a></li>
+          </ul>
+          <!-- 서비스소개 자식 (초기 숨김) -->
+          <ul id="service" class="submenu2" style="display:none;">
+            <li><a href="#">가입만남절차</a></li>
+            <li><a href="#">매칭시스템 안내</a></li>
+            <li><a href="#">가입자격 안내</a></li>
+            <li><a href="#">인증서류 안내</a></li>
+            <li><a href="#">비용안내</a></li>
+          </ul>
+          <!-- 오픈매칭 자식 (초기 숨김) -->
+          <ul id="openmatch" class="submenu2" style="display:none;">
+            <li><a href="#">매칭리스트</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+    <!-- ─────────────────────────────────────── -->
+     
+    <!--내용시작-->
+    
+    <!--설명 시작-->
+    <div class="white_bg margin_top100">
+        <div class="inner_box">
+            <div class="sub_title" data-aos="fade-down2" data-aos-duration="300">					
+                <h3><span>내정보관리</span></h3>
+            </div>
+            <div class="sub_txt" data-aos="fade-down2" data-aos-duration="600"></div>
+        </div>
+    </div>
+    <!--//설명 끝-->
+    
+    
+    
+    <!--//내용끝-->	
+    
+</div>
+
+</body>
+</html>

@@ -9,9 +9,23 @@ $(document).ready(function () {
     responsiveWidth: 768,
     anchors: ['section1', 'section2', 'section3', 'section4', 'section5'],
     navigationTooltips: ['시작', '차별점', '가입안내', '매칭시스템', '고객센터'],
-    showActiveTooltip: true
+    showActiveTooltip: true,
+    /* ...other options... */
+    afterLoad: function(origin, destination, direction){
+      AOS.refreshHard();   // 섹션 전환 시 AOS 강제 재스캔
+    }
   });
 
+  // fullPage.js 초기화 후에 AOS도 초기화
+  AOS.init({
+    offset:         120,
+    delay:          0,
+    duration:       800,
+    easing:         'ease',
+    once:           false,
+    mirror:         false
+  });
+  
   // PC 메뉴
   let submenuTimer;
   function isPC() {
@@ -124,5 +138,72 @@ $(document).ready(function () {
         }
       }
     });
+  });  
+   
+  $(function(){
+    // 1depth 클릭 시
+    $('.sub-nav.two-col .menu1 li').on('click', function(){
+      var target = $(this).data('target');
+  
+      // 1depth active 교체
+      $(this)
+        .addClass('active')
+        .siblings().removeClass('active');
+  
+      // 2depth 보이기/숨기기
+      $('.sub-nav.two-col .submenu2')
+        .hide();
+      $('#'+target).show();
+    });
   });
+
+  $(function(){
+    var $menu1 = $('.sub-nav.two-col .menu1');
+  
+    // (안전망) JS 로도 숨겨두기
+    $menu1.find('li:not(.active)').hide();
+  
+    // “회사소개” 클릭 시, 나머지 메뉴 슬라이드 다운
+    $menu1.find('li.active').on('click', function(){
+      $menu1.find('li:not(.active)').stop(true).slideDown(300);
+    });
+  });
+
+  $(function(){
+    var $menu1    = $('.sub-nav.two-col .menu1'),
+        $items    = $menu1.find('li'),
+        $submenus = $('.sub-nav.two-col .submenu2');
+  
+    // 초기: active 외엔 숨겨두기
+    $items.not('.active').hide();
+  
+    // 1depth 클릭 토글/선택
+    $menu1.on('click', 'li', function(){
+      var $clicked = $(this),
+          id        = $clicked.data('target'),
+          visibleCount = $items.filter(':visible').length;
+  
+      if (visibleCount === 1) {
+        // [collapsed] → 펼치기
+        $items.stop(true).slideDown(200);
+        // 오른쪽 서브메뉴는 그대로 유지
+      } else {
+        // [expanded] → 선택된 항목만 남기고 접기
+        $items.not($clicked)
+              .stop(true)
+              .slideUp(200)
+              .removeClass('active');
+  
+        $clicked
+          .addClass('active')
+          .stop(true)
+          .slideDown(200); // 혹시 숨겨졌다면
+  
+        // 오른쪽 서브메뉴 토글
+        $submenus.hide();
+        $('#'+ id).show();
+      }
+    });
+  });
+
 });

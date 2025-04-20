@@ -20,7 +20,14 @@
 					});
 				});
 				
-				var active = (location.hash)?$(this).find('a[href=' + location.hash + ']')[0]:'';
+				var active = '';
+				if (location.hash) {
+				active = $(this)
+					.find('a')
+					.filter(function() {
+					return this.getAttribute('href') === location.hash;
+					})[0];
+				}
 
 				if(active){
 					activate(active, 'toggle');

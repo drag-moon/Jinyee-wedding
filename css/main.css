@@ -461,6 +461,11 @@ button {
   }
 
 
+  .section-footer {
+	padding: 0;    /* footer 위·아래 여백 */
+	background: #f9f9f9; /* 필요에 따라 배경색 지정 */
+  }
+
 @media all and (max-width:1300px) and (min-width:768px) {
 	
 	.features, .guide-icons, .service-btns {

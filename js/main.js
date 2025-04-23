@@ -22,10 +22,10 @@ function initFullpage() {
     navigation: true,
     navigationPosition: 'left',
     responsiveWidth: 768,
-    anchors: ['section1','section2','section3','section4','section5'],
-    navigationTooltips: ['시작','차별점','가입안내','매칭시스템','고객센터'],
+    anchors: ['section1','section2','section3','section4','section5','footer'],
+    navigationTooltips: ['시작','차별점','가입안내','매칭시스템','고객센터',''],
     showActiveTooltip: true,
-    afterLoad: function(){
+    afterLoad: function(origin, destination){
       AOS.refreshHard();
     }
   });

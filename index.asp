@@ -172,14 +172,13 @@
 			</div>
       </div>	
     </section>
-  </div>
+  
 
-  <!-- 사이드 네비 시작 -->
-  <!--#include virtual="/include/f_quickmenu.asp"-->
-  <!-- 사이드 네비 끝 -->
-	
-  <!-- 사이드 네비 시작 -->
-  <!--#include virtual="/include/footer.asp"-->
-  <!-- 사이드 네비 끝 -->
+    <!-- footer 전용 섹션 -->
+    <section class="section fp-auto-height section-footer" id="section-footer">
+      <!--#include virtual="/include/f_quickmenu.asp"-->
+      <!--#include virtual="/include/footer.asp"-->
+    </section>
+  </div>    
 </body>
 </html>

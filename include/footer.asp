@@ -1,100 +1,31 @@
 
-<div class="footer">
-
-        <%
-        '[20240515] ÅëÇÕ»çÀÌÆ® ÁöÁ¡º° ÇÏ´ÜÅ¸ÀÌÆ² º¯°æ       'menu.asp ÂÊµµ ¼öÁ¤ ÇÊ¿äÇÔ.'
-        footerTxt = "<p>À¯·ÎÁøºñ´¢ÀÇÇÐ°úÀÇ¿ø/ À¯·ÎÁø³²¼ººñ´¢±â°úÀÇ¿ø / À¯·ÎÁøºñ´¢±â°úÀÇ¿ø / À¯·ÎÁø³²¼ºÀÇ¿ø<br>"
-        footerLogo = "/images/n_common/copyright_logo.png"
-        If LCase(Request.ServerVariables("HTTP_HOST")) = "wonju.urogyn.co.kr" Then  
-            '¾Æ·¡³»¿ëÀº Check_Metabase.asp ÆÄÀÏ¿¡¼­ ÃßÃâÇÔ.
-            footerTxt = "<p>»óÈ£ : À¯·ÎÁøºñ´¢±â°úÀÇ¿ø | ´ëÇ¥ÀÚ : ÀÌ¿ì½Â | »ç¾÷ÀÚ¹øÈ£ : 224-16-85815<br>ÁÖ¼Ò : °­¿ø ¿øÁÖ½Ã ¼­¿ø´ë·Î 184 »õµ¿ºôµù 2Ãþ | ´ëÇ¥ÀüÈ­ : 033-734-7752<br>"  
-            footerLogo = "/images/main/copyrightlogo_12.gif"
-        End If
-        %>        
-    	<div class="inner_box">
-            <p class="logo"><img src="<%=footerLogo%>" alt=""/></p>
+<div class="footer fp-auto-height">            
+  		<div class="inner_box">
+            <p class="logo"><img src="/images/common/logo.png" alt=""/></p>
             <div class="address">
             	<ul>
-                	<li><a href="/sub/member/privacy.asp">°³ÀÎÁ¤º¸º¸È£Á¤Ã¥</a> | </li>
-                    <li><a href="/sub/member/service.asp">È¸¿ø°¡ÀÔ¾à°ü</a> | </li>
-                    <li><a href="/sub/info/pay01.asp">ºñ±Þ¿© Ç×¸ñ</a> | </li>
+                	<li><a href="/">íšŒì‚¬ì†Œê°œ</a> | </li>
+                	<li><a href="/sub/member/privacy.asp">ê°œì¸ì •ë³´ë³´í˜¸ì •ì±…</a> | </li>
+                    <li><a href="/sub/member/service.asp">ì´ìš©ì•½ê´€</a> | </li>
+                    <li><a href="/">ì†í•´ë°°ìƒì²­êµ¬ì ˆì°¨</a> | </li>
+                    <li><a href="/">ì°¾ì•„ì˜¤ì‹œëŠ”ê¸¸</a></li>
                 </ul>
-                <%=footerTxt%>
-                Copyrights (c) 2024 UROGYN CLINIC. all rights reserved</p>
+                <p>ìƒí˜¸ëª… ì˜¤í”ˆë§¤ì¹˜  |   ëŒ€í‘œ ê¹€ê´€ìˆ˜  |   ì„œìš¸ ê°•ë‚¨êµ¬ í…Œí—¤ëž€ë¡œ7ê¸¸ 12 í—ˆë°”í—ˆë°”ë¹Œë”© 1004í˜¸  |   E-mail ugmc@gmail.com  |   ëŒ€í‘œë²ˆí˜¸ 0507-1460-0383 <br>
+				ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸ 649-59-0012  |   êµ­ë‚´ ê²°í˜¼ì¤‘ê°œì—… ì‹ ê³ ë²ˆí˜¸ ì œ ì„œìš¸-ê°•ë‚¨-êµ­ë‚´-24-0011í˜¸<br>
+				COPYRIGHT (C) 2025 openmatch. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
-	
-	
-</div>
-
-
-<!--ÅåÅå»ó´ã ½ºÅ©¸³Æ®-->
-<script src="/js/event/modernizr.js"></script>
-<script src="/js/event/main.js"></script>
-<!--//ÅåÅå»ó´ã ½ºÅ©¸³Æ®-->
+	</div>
 			
-<!-- quickBar start --> 
+	<!-- quickBar start --> 
     <div class="quickBar">
         <ul>
-            <li><a href="/sub/counseling/counseling03.asp?ctp=3" onclick="hide_trigger2();hide_trigger1();" ><img alt="ºñ¿ë»ó´ã" src="/images/n_common/m_btn_01.png"></a></li>
-			<li><a id="cd-menu-trigger" href="#none" onclick="hide_trigger2();" onMouseDown="javascript:AM_PL('/main/kakaotalk');"><img alt="Ä«Åå»ó´ã" src="/images/n_common/m_btn_02.png"></a></li>
-            <li><a id="cd-menu-trigger2" href="#none" onclick="hide_trigger1()" onMouseDown="javascript:AM_PL('/main/naver');"><img alt="ÅåÅå»ó´ã" src="/images/n_common/m_btn_03.png"></a></li>
-			<li><a href="/sub/community/community08_new.asp" onclick="hide_trigger2();hide_trigger1();" ><img alt="ÀÌº¥Æ®" src="/images/n_common/m_btn_04.png"></a></li>   
-            <li><a href="/sub/info/info03_02.asp" onclick="hide_trigger2();hide_trigger1();" ><img alt="¿À½Ã´Â±æ" src="/images/n_common/m_btn_05.png"></a></li>   
-            
-        </ul>
+			<li><a href="/"><img alt="ë¹„ìš©ì•ˆë‚´" src="/images/common/m_btn_01.png"></a></li>
+			<li><a href="/"><img alt="ì¹´í†¡ìƒë‹´" src="/images/common/m_btn_02.png"></a></li>
+			<li><a href="/"><img alt="ë¹ ë¥¸ìƒë‹´" src="/images/common/m_btn_03.png"></a></li>
+			<li><a href="/"><img alt="ì…€í”„ë§¤ì¹­" src="/images/common/m_btn_04.png"></a></li>
+			<li><a href="/"><img alt="ë§ˆì´íŽ˜ì´ì§€" src="/images/common/m_btn_05.png"></a></li>            
+      </ul>
     </div>    
     <!-- // quickBar end -->
 			
-
-			
-<!-- Ä«Åå»ó´ã½ÃÀÛ -->		
-<nav id="cd-lateral-nav">
-		<div class="cd-navigation socials">
-			<p><img src="/images/common/kakao.jpg" alt=""></p>
-			<ul>
-				<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_xcxnxjdxd" target="_blank">±¤ÁÖÁ¡Ä«Åå</a></li>
-				<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_EDRCxd" target="_blank">±¸¸®Á¡Ä«Åå</a></li>
-				<!--<li><a class="cd-kakao cd-txt" href="http://pf.kakao.com/_lgkHT" target="_blank">³ë¿øÁ¡Ä«Åå</a></li>-->
-				<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_Wasxcxd" target="_blank">´ë±¸Á¡Ä«Åå</a></li>
-				<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_qyRCxd" target="_blank">´ëÀüÁ¡Ä«Åå</a></li>
-				<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_BjZTxd" target="_blank">ºÎ»êÁ¡Ä«Åå</a></li>
-				<!--<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_xmwbdxd" target="_blank">ºÎÃµÁ¡Ä«Åå</a></li>-->				
-				<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_dPzTxd" target="_blank">¼ö¿øÁ¡Ä«Åå</a></li>
-				<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_GDyvxd" target="_blank">½Åµµ¸²Ä«Åå</a></li>
-				<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_Rbxmxlxd" target="_blank">¾È»êÁ¡Ä«Åå</a></li>
-				<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_RxaRCxd" target="_blank">¿øÁÖÁ¡Ä«Åå</a></li>
-				<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_QqZTxd" target="_blank">ÀÎÃµÁ¡Ä«Åå</a></li>
-				<!--<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_pxfKxcxd" target="_blank">ÀüÁÖÁ¡Ä«Åå</a></li>-->
-				<!--<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_SkqTxd" target="_blank">Ã¢¿øÁ¡Ä«Åå</a></li>-->
-				<!--<li><a class="cd-kakao cd-txt" href="http://pf.kakao.com/_JwUHT" target="_blank">Ãµ¾ÈÁ¡Ä«Åå</a></li>-->
-				<!--<li><a class="cd-kakao cd-txt" href="https://pf.kakao.com/_xonZTxd" target="_blank">Ã»ÁÖÁ¡Ä«Åå</a></li>-->
-			</ul>
-		</div>
-	</nav>
-<!-- //Ä«Åå»ó´ã³¡ -->
-		
-<!-- ÅåÅå»ó´ã½ÃÀÛ -->		
-<nav id="cd-lateral-nav2">
-		<div class="cd-navigation socials">
-			<p><img src="/images/common/talk.jpg" alt=""></p>
-			<ul>
-				<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wc19m5" target="_blank">±¸¸®Á¡ÅåÅå</a></li>
-				<!--<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wc26q2" target="_blank">³ë¿øÁ¡ÅåÅå</a></li>-->
-				<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wcfulj" target="_blank">´ë±¸Á¡ÅåÅå</a></li>
-				<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wc1cxf" target="_blank">´ëÀüÁ¡ÅåÅå</a></li>
-				<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wce7ma" target="_blank">ºÎ»êÁ¡ÅåÅå</a></li>
-				<!--<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wc1pih" target="_blank">ºÎÃµÁ¡ÅåÅå</a></li>-->				
-				<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wcfrno" target="_blank">¼ö¿øÁ¡ÅåÅå</a></li>
-				<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wcfn5e" target="_blank">½Åµµ¸²ÅåÅå</a></li>
-				<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wc2yku" target="_blank">¾È»êÁ¡ÅåÅå</a></li>
-				<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wc6doe" target="_blank">¿øÁÖÁ¡ÅåÅå</a></li>
-				<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wcflv0" target="_blank">ÀÎÃµÁ¡ÅåÅå</a></li>
-				<!--<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wc2i4o" target="_blank">Ãµ¾ÈÁ¡ÅåÅå</a></li>-->
-				<!--<li><a class="cd-talk cd-txt" href="https://talk.naver.com/ct/wcfwmo" target="_blank">Ã»ÁÖÁ¡ÅåÅå</a></li>-->
-			</ul>
-		</div>
-	</nav>
-<!-- //ÅåÅå»ó´ã³¡ -->
-
-<!--#include virtual="/inc/Check_Bottomform.asp"-->

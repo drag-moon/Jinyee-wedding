@@ -9,6 +9,8 @@ $(document).ready(function () {
   initAccordionMenu();
   initSwiper();
   initSubNavDropdowns();  // 1·2차 드롭다운
+  initSearchModal(); // 모바일 상세검색 팝업 모달
+  initInfoModal();     // 매칭 상세정보 팝업 모달
 });
 
 /* ─────────────────────────────────────────────────────────────────────── */
@@ -227,5 +229,85 @@ function initSubNavDropdowns() {
     $firstList.slideUp(200);
     $secondList.slideUp(200);
     // $secondDrop.hide();
+  });
+}
+
+
+/* 9. 모바일 상세검색 팝업 모달 */
+function initSearchModal() {
+  const openBtn = document.getElementById('openModalBtn');
+  const overlay = document.getElementById('searchOverlay');
+  const closeBtn = document.getElementById('closeModalBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const applyBtn = document.getElementById('applyBtn');
+  const tagsContainer = document.getElementById('tagsContainer');
+
+  openBtn.addEventListener('click', () => overlay.style.display = 'block');
+  closeBtn.addEventListener('click', () => overlay.style.display = 'none');
+
+  // 탭 전환
+  document.querySelectorAll('.search_sidebar li').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelector('.search_sidebar li.active').classList.remove('active');
+      tab.classList.add('active');
+      document.querySelectorAll('.search_content > div').forEach(panel => panel.classList.remove('active'));
+      document.getElementById(tab.dataset.target).classList.add('active');
+    });
+  });
+
+  // 태그 업데이트
+  function updateTags() {
+    tagsContainer.innerHTML = '';
+    document.querySelectorAll('.search_content input:checked').forEach(cb => {
+      const span = document.createElement('span');
+      span.className = 'search_tag';
+      span.dataset.value = cb.value;
+      span.innerHTML = `${cb.value}<button class="search_tag_close" type="button">&times;</button>`;
+      tagsContainer.appendChild(span);
+    });
+  }
+  document.querySelectorAll('.search_content input')
+          .forEach(cb => cb.addEventListener('change', updateTags));
+
+  // 태그 삭제 (위임)
+  tagsContainer.addEventListener('click', e => {
+    if (e.target.classList.contains('search_tag_close')) {
+      const value = e.target.parentNode.dataset.value;
+      const checkbox = document.querySelector(`.search_content input[value="${value}"]`);
+      if (checkbox) {
+        checkbox.checked = false;
+        updateTags();
+      }
+    }
+  });
+
+  // 초기화
+  resetBtn.addEventListener('click', () => {
+    document.querySelectorAll('.search_content input').forEach(cb => cb.checked = false);
+    updateTags();
+  });
+
+  // 적용
+  applyBtn.addEventListener('click', () => {
+    const selected = Array.from(document.querySelectorAll('.search_content input:checked'))
+                          .map(cb => cb.value);
+    console.log('적용된 조건:', selected);
+    overlay.style.display = 'none';
+  });
+}
+
+
+
+/* 10. 매칭 상세정보 팝업 모달 */
+function initInfoModal() {
+  document.getElementById('openInfoBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('infoOverlay').style.display = 'block';
+  });
+  document.querySelectorAll('.modal-close').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const id = btn.getAttribute('data-close');
+      document.getElementById(id).style.display = 'none';
+    });
   });
 }

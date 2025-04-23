@@ -1,472 +1,163 @@
-<!-- ÃÖ´ë»çÀÌÁî GNB -->
-<header class="headerwrap">
-	
-    <!--»ó´Ü°øÅë¸Þ´º½ÃÀÛ-->
-	<div class="gatewrapper">
-		<div class="gate">
-			
-			<div class="floatL">
-				<div class="leftgate">
-					<ul>
-						<li class="current"><a href="http://www.urogyn.co.kr" target="_blank">³²¼º</a></li>
-						<li><a href="http://urogynfat.co.kr" target="_blank">Ã¼Çü</a></li>
-						<!--<li><a href="http://cn.urogyn.co.kr" target="_blank">ñéÙþ</a></li>-->
-						<li><a href="http://ugyn.co.kr" target="_blank">¿©¼º</a></li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="floatR">
-				<div class="rightgate">
-<%
-If FullView="Y" then
-'    Response.write "["& session("originReferer") &"]"
-End If
-%>
-					<ul>
-						
-                        <%If Session(DBLeft&"_UserID") = "" then%>
-                        <li><a href="javascript:void(0)" onclick="intergrateLogin('','<%=BackURL%>');">·Î±×ÀÎ</a></li>
-						<li><a href="/sub/member/join01.asp">È¸¿ø°¡ÀÔ</a></li>
-                        <%Else%>
-                        <li><a href="/_ok/member_logout.asp">·Î±×¾Æ¿ô</a></li>
-                        <%End IF%>                        
-                        <%If Session(DBLeft&"_UserID") = "" then%>
-						<li><a href="javascript:void(0)" onclick="intergrateLogin('','<%=HostAddress%>/sub/member/edit.asp||<%=BackURL%>');">¸¶ÀÌÆäÀÌÁö</a></li>
-                        <%Else%>
-						<li><a href="/sub/member/edit.asp">¸¶ÀÌÆäÀÌÁö</a></li>
-                        <%End IF%>
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</div>
-	<!--//»ó´Ü°øÅë¸Þ´º³¡-->
+  <!-- PC ë©”ë‰´ -->
+  <header class="header">
+    <div class="inner">    
+      <h1 class="logo" onClick="location.href='/'">OpenMatch</h1>
+      <nav class="gnb">
+        <ul class="pc-menu">
+          <li>íšŒì‚¬ì†Œê°œ</li>
+          <li>ì„œë¹„ìŠ¤ì†Œê°œ</li>
+          <li>ì˜¤í”ˆë§¤ì¹­</li>
+          <li>ìƒë‹´ì‹ ì²­</li>
+          <li>ì»¤ë®¤ë‹ˆí‹°</li>
+          <li>ë§ˆì´íŽ˜ì´ì§€</li>
+        </ul>
+      </nav>
+      <div class="auth-menu">
+        <span onClick="location.href='/sub/mypage/login.asp'">ë¡œê·¸ì¸</span> | <span onClick="location.href='/sub/mypage/join01.asp'">íšŒì›ê°€ìž…</span>
+      </div>
+    </div>
 
-    <%'[20240515] ÅëÇÕ»çÀÌÆ® ÁöÁ¡º° »ó´ÜÅ¸ÀÌÆ² º¯°æ       'footer.asp ÂÊµµ ¼öÁ¤ ÇÊ¿äÇÔ.
-        titleLogoSrc = "/images/common/uro_logo.gif"
-        titleLogoAlt = "À¯·ÎÁø³²¼ºÅ¬¸®´Ð"
-        titleTelSrc = "/images/common/top_tel.gif"
-        titleTelArt = "1577.3589"
-        
-        mobileTitleLogoSrc = "/images/common/uro_logo_m.gif"   ' id="header_m" ÀÇ ¸ð¹ÙÀÏ header logo ¼ÂÆÃ
+    <!-- ì „ì²´ ì„œë¸Œë©”ë‰´ -->
+    <div class="all-submenu">
+      <div class="submenu-group">
+        <ul>
+          <li onClick="location.href='/'">ê²°ì •ì‚¬ ì†Œê°œ</li>
+          <li onClick="location.href='/'">ê²°ì •ì‚¬ íŠ¹ë³„í•¨</li>
+        </ul>
+        <ul>
+          <li onClick="location.href='/'">ê°€ìž…ë§Œë‚¨ì ˆì°¨</li>
+          <li onClick="location.href='/'">ë§¤ì¹­ì‹œìŠ¤í…œ ì•ˆë‚´</li>
+          <li onClick="location.href='/'">ê°€ìž…ìžê²©ì•ˆë‚´</li>
+          <li onClick="location.href='/'">ì¸ì¦ì„œë¥˜ì•ˆë‚´</li>
+          <li onClick="location.href='/'">ë¹„ìš©ì•ˆë‚´</li>
+        </ul>
+        <ul>
+          <li onClick="location.href='/sub/matching/matching01.asp'">ë§¤ì¹­ë¦¬ìŠ¤íŠ¸</li>
+        </ul>
+        <ul>
+          <li onClick="location.href='/'">ë¹ ë¥¸ìƒë‹´</li>
+          <li onClick="location.href='/'">ìžì£¼ë¬»ëŠ”ì§ˆë¬¸</li>
+        </ul>
+        <ul>
+          <li onClick="location.href='/'">ê³µì§€ì‚¬í•­</li>
+          <li onClick="location.href='/'">ë§¤ì¹­ì»¤í”ŒìŠ¤í† ë¦¬</li>
+          <li onClick="location.href='/'">ì„±í˜¼ì»¤í”ŒìŠ¤í† ë¦¬</li>
+        </ul>
+        <ul>
+          <li onClick="location.href='/sub/mypage/mypage01.asp'">ë‚´ì •ë³´ ê´€ë¦¬</li>
+          <li onClick="location.href='/sub/mypage/mypage02.asp'">ë§¤ì¹­í˜„í™©</li>
+          <li onClick="location.href='/sub/mypage/mypage03.asp'">ì§€ì¸/ì¹œêµ¬ì†Œê°œ</li>
+          <li onClick="location.href='/sub/mypage/mypage04.asp'">ë§¤ì¹­ë¨¸ë‹ˆ</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- //PC ë©”ë‰´ -->
 
-        If LCase(Request.ServerVariables("HTTP_HOST")) = "wonju.urogyn.co.kr" Then
-            titleLogoSrc = "/images/main/logo_12.gif"
-            titleLogoAlt = "À¯·ÎÁøºñ´¢±â°úÀÇ¿ø ¿øÁÖÁ¡"
-            titleTelSrc  = "/images/main/top_tel_12.gif"
-            titleTelArt  = "033.734.7752"
-            mobileTitleLogoSrc = "/images/main/uro_logo_12_m.gif"
-        End IF
-    %>
-	<nav class="header">
-    	<h1 class="logo"><a href="/"><img src="<%=titleLogoSrc%>" alt="<%=titleLogoAlt%>" /></a></h1>
-        <div class="tel"><img src="<%=titleTelSrc%>" alt="<%=titleTelArt%>"/></div>
-	</nav>
-
-	<nav class="gnb_contain">
-		<div class="gnb">
-        	<ul>
-				<li><a href="/sub/operation/operation02.asp">³²¼ºÈ®´ë</a></li>
-                <li><a href="/sub/premature/premature01.asp">Á¶·çÅ¬¸®´Ð</a></li>
-                <li><a href="/sub/erectile/erectile01.asp">¹ß±âºÎÀü</a></li>
-                <li><a href="/sub/vasectomy/vasectomy03.asp">Á¤°ü/Æ÷°æ</a></li>
-                <li><a href="/sub/prostate/prostate02.asp">³²¼ºÅ¬¸®´Ð</a></li>
-                <li><a href="/sub/mtv/mtv01.asp">À¯·ÎÁøM TV</a></li>
-                <li><a href="/sub/info/info01.asp">À¯·ÎÁø¼Ò°³</a></li>
-                <li><a href="/sub/counseling/counseling03.asp">¿Â¶óÀÎ»ó´ã</a></li>
-                <li><a href="/sub/community/community01.asp">Ä¿¹Â´ÏÆ¼</a></li>				
+  <!-- ëª¨ë°”ì¼ ë©”ë‰´ -->
+  <div class="header_m">
+    <h1><a href="/"><img src="/images/common/logo.png" alt="ê²°ì •ì‚¬"></a></h1>
+    <div class="mobile-menu-button">
+      <span class="hamburger-icon">â˜°</span>
+    </div>
+    <div class="mobile-menu">
+      <div class="top-bar">
+        <div class="login_w">
+          <div class="login_bg">
+            <a href="/sub/mypage/login.asp"><img src="/images/common/loginicon.png" alt="login"/> ë¡œê·¸ì¸ í•˜ì„¸ìš”</a>
+            <span class="close-mobile-menu">âœ•</span>
+          </div>
+          <div class="join_bg">
+            <ul>
+              <li><a href="/sub/mypage/join01.asp">íšŒì›ê°€ìž…</a></li>
+              <li><a href="/sub/mypage/mypage01.asp">ë§ˆì´íŽ˜ì´ì§€</a></li>
             </ul>
+          </div>
         </div>
-        <!--¼­ºê¸Þ´º½ÃÀÛ-->
-        <div id="snb">
-        	<div id="submenuw">
-        	<div id="submenu">
-            	<div id="submenu1">
-                	<a href="/sub/operation/operation02.asp">- À½°æÈ®´ë</a><br>
-                    <a href="/sub/operation/operation04.asp">- ±ÍµÎÈ®´ë</a><br>
-                    <a href="/sub/operation/operation06.asp">- ±æÀÌ¿¬Àå</a><br>
-                    <a href="/sub/operation/operation07.asp">- Àç°Ç¼ö¼ú</a>
-                </div>
-                <div id="submenu2">
-                	<a href="/sub/premature/premature01.asp">- ¿øÀÎ¡¤Áø´Ü</a><br>
-                    <a href="/sub/premature/premature02.asp">- ºñ¼ö¼úÄ¡·á</a><br>
-                    <a href="/sub/premature/premature03.asp">- ¼ö¼úÄ¡·á</a>
-                </div>
-                <div id="submenu3">
-                    <a href="/sub/erectile/erectile01.asp">- ¿øÀÎ¡¤Áø´Ü</a><br>
-                    <a href="/sub/erectile/erectile04.asp">- ¾à¹°Ä¡·á</a><br>
-                    <a href="/sub/erectile/erectile07.asp">- Ãæ°ÝÆÄÄ¡·á</a><br>
-                    <a href="/sub/erectile/erectile02.asp">- ¼ö¼úÄ¡·á</a>
-                </div>
-                
-                <div id="submenu4">                	
-                    <a href="/sub/vasectomy/vasectomy03.asp">- À¯·ÎÁøÁ¤°ü¼ö¼ú</a><br>
-                    <a href="/sub/vasectomy/vasectomy05.asp">- À¯·ÎÁøÆ÷°æ¼ö¼ú</a><br>
-                    <a href="/sub/vasectomy/vasectomy06.asp">- Æ÷°æ¼ö¼úÁ¾·ù</a><br>
-                    <a href="/sub/vasectomy/vasectomy09.asp">- Æ÷°æÀç°Ç¼ö¼ú</a><br>
-                </div>
-                <div id="submenu5">
-                	<a href="/sub/prostate/prostate02.asp">- Àü¸³¼±</a><br>
-                    <a href="/sub/prostate/prostate05.asp">- ¿ä·Î°á¼®</a><br>
-                    <a href="/sub/uroclinic/uroclinic01.asp">- ¹Ù¼¼¸°Á¦°Å</a><br>
-                    <a href="/sub/uroclinic/uroclinic02.asp">- À½°æ¸¸°îÁõ</a><br>
-                    <a href="/sub/uroclinic/uroclinic03.asp">- Ä¡°ñÀ¶±â¼ö¼ú</a><br>
-                    <a href="/sub/uroclinic/uroclinic04.asp">- ÀÎ°ø°íÈ¯¼ú</a><br>
-                    <a href="/sub/uroclinic/uroclinic06.asp">- ³²¼º¼ºº´</a><br>
-                    <a href="/sub/uroclinic/uroclinic08.asp">- ¿þµù°ËÁø</a>
-                </div>
-				<!--<div id="submenu6">
-                    <a href="/sub/package/package01.asp">- ¿ÀÆÑ ÆÐÅ°Áö</a><br>
-                    <a href="/sub/package/package02.asp">- ³²½Å ÆÐÅ°Áö</a>
-                </div>-->
+      </div>
 
-                <div id="submenu6">
-					<a href="/sub/mtv/mtv01.asp">- ÀüÃ¼</a><br>
-            <%  ' MTV ¸µÅ© ÀÌ¹ÌÁö Á¤º¸ °¡Á®¿À±â
-                db2.open dbcon
-                utvSql = ""
-                utvSql = utvSql & "SELECT A.IDX, A.TITLE"
-                utvSql = utvSql & "  FROM UR1_Board2 A"
-                utvSql = utvSql & " WHERE A.C_idx=173 AND A.Board_Etc4='Y'"
-                utvSql = utvSql & " ORDER BY A.NUM DESC"
-                rs2.open utvSql, db2, 1
-                If rs2.eof Or rs2.bof Then
-                    utvgrc = -1
-                Else
-                    utvgrs = rs2.getrows()
-                    utvgrc = UBound(utvgrs,2)
-                End If
-                rs2.close
-                db2.close
+      <ul class="accordion">
+        <li><a href="#menu01">íšŒì‚¬ì†Œê°œ</a>
+          <ul>  
+            <li><a href="/">ê²°ì •ì‚¬ ì†Œê°œ</a></li>
+            <li><a href="/">ê²°ì •ì‚¬ íŠ¹ë³„í•¨</a></li>
+          </ul>
+        </li>
+        <li><a href="#menu02">ì„œë¹„ìŠ¤ì†Œê°œ</a>
+          <ul>
+            <li><a href="/">ê°€ìž…ë§Œë‚¨ì ˆì°¨</a></li>
+            <li><a href="/">ë§¤ì¹­ì‹œìŠ¤í…œ ì•ˆë‚´</a></li>
+            <li><a href="/">ê°€ìž…ìžê²©ì•ˆë‚´</a></li>
+            <li><a href="/">ì¸ì¦ì„œë¥˜ì•ˆë‚´</a></li>
+            <li><a href="/">ë¹„ìš©ì•ˆë‚´</a></li>
+          </ul>
+        </li>
+        <li><a href="#menu03">ì˜¤í”ˆë§¤ì¹­</a>
+          <ul>
+            <li><a href="/sub/matching/matching01.asp">ë§¤ì¹­ë¦¬ìŠ¤íŠ¸</a></li>
+          </ul>
+        </li>
+        <li><a href="#menu04">ìƒë‹´ì‹ ì²­</a>
+          <ul>
+            <li><a href="/">ë¹ ë¥¸ìƒë‹´ì‹ ì²­</a></li>
+            <li><a href="/">ìžì£¼ë¬»ëŠ”ì§ˆë¬¸</a></li>
+          </ul>
+        </li>
+        <li><a href="#menu05">ì»¤ë®¤ë‹ˆí‹°</a>
+          <ul>
+            <li><a href="/">ê³µì§€ì‚¬í•­</a></li>
+            <li><a href="/">ë§¤ì¹­ì»¤í”ŒìŠ¤í† ë¦¬</a></li>
+            <li><a href="/">ì„±í˜¼ì»¤í”ŒìŠ¤í† ë¦¬</a></li>
+          </ul>
+        </li>
+        <li><a href="#menu06">ë§ˆì´íŽ˜ì´ì§€</a>
+          <ul>
+            <li><a href="/sub/mypage/mypage01.asp">ë‚´ì •ë³´ê´€ë¦¬</a></li>
+            <li><a href="/sub/mypage/mypage02.asp">ë§¤ì¹­í˜„í™©</a></li>
+            <li><a href="/sub/mypage/mypage03.asp">ì§€ì¸/ì¹œêµ¬ì†Œê°œ</a></li>
+            <li><a href="/sub/mypage/mypage04.asp">ë§¤ì¹­ë¨¸ë‹ˆ</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- //ëª¨ë°”ì¼ ë©”ë‰´ -->
 
-                  For i = 0 To utvgrc
-                    categoryIdx     = utvgrs(0,i)
-                    utvTitle        = utvgrs(1,i) ' title
-
-                    If InStr(nowpage, "/utv/utv"&utvAddr) > 0 Or CStr(categoryIdx)=CStr(sbe)  Then
-                        S_Board_Etc1 = categoryIdx
-                        now_utvAddr = utvAddr
-                        now_utvTitle  = utvTitle
-                        now_utvTitleImage = utvImgTitle
-                    End IF
-                    
-                %>
-					<a href="/sub/mtv/mtv01_all.asp?sidx=<%=categoryIdx%>">- <%=utvTitle%></a><br>
-                <%Next%>
-                </div>
-
-                <div id="submenu7">
-                    <a href="/sub/info/info01.asp">- À¯·ÎÁø¼Ò°³</a><br>
-                    <a href="/sub/info/info02.asp">- ÀÇ·áÁø¼Ò°³</a><br>
-                    <a href="/sub/info/info03_02.asp">- Àü±¹ÁöÁ¡¾È³»</a><br>
-					<a href="/sub/info/info09.asp">- Àåºñ¼Ò°³</a><br>
-                    <!--<a href="/sub/info/info04.asp">- ÁöÁ¡º°ºí·Î±×</a><br>-->
-                    <a href="/sub/info/info05.asp">- È¯ÀÚÁö¿øÇÁ·Î±×·¥</a><br>
-                    <!--<a href="/sub/info/info06.asp">- ÀÎÁõ¼­</a>-->
-					<a href="/sub/info/info08.asp">- Á¦ÈÞ/°¡¸Í¹®ÀÇ</a>							   
-                </div>
-                <div id="submenu8">                    
-                    <a href="/sub/counseling/counseling03.asp">- ¿Â¶óÀÎ¹®ÀÇ</a><br>
-					<a href="/sub/counseling/counseling07.asp">- ¼ö¼ú»çÁø½ÅÃ»</a><br>                    
-                    <a href="/sub/counseling/counseling09.asp">- ¼ö¼úÀüÈÄ»çÁøÈ®ÀÎ</a><br>
-                    <a href="/sub/counseling/counseling08.asp">- ÀÚ°¡Áø´ÜÇÏ±â</a>
-                </div>
-                <div id="submenu9">
-                    <a href="/sub/community/community01.asp">- °øÁö»çÇ×</a><br>
-					<!--<a href="/sub/community/community10.asp">- °ü°èÀÇ ±â¼ú</a><br>-->
-                    <a href="/sub/community/community02.asp">- ¾ð·Ðº¸µµ</a><br>
-                    <!--<a href="/sub/community/community03.asp">- À¯·ÎÁøÁö½ÄIN</a><br>-->
-                    <!--<a href="/sub/community/community04.asp">- ÀÇ»ç°æÇè´ã</a><br>-->
-                    <a href="/sub/community/community05.asp">- ¼ö¼úÈÄ±â</a><br>
-                    <!--<a href="/sub/community/community11.asp">- ¿ÀÅåÇØTV</a><br> -->  
-					<!--<a href="/sub/community/community06.asp">- UÀÇ ¼º±³À°</a><br> 
-                    <a href="/sub/community/community07.asp">- µ¿¿µ»óÁ¤º¸</a><br>-->
-                    <a href="/sub/community/community08_new.asp">- ÀÌº¥Æ®</a>
-                   
-                </div>
-            </div>
-            </div>
-        </div>
-        <!--//¼­ºê¸Þ´º³¡-->
-	</nav>
-</header>
-<!-- //ÃÖ´ë»çÀÌÁî GNB -->
+  <!--topë²„íŠ¼ì‹œìž‘-->
+  <div class="go-top"  onclick="location.href='#myAnchor'">
+      <img src="/images/common/topbt.png" alt="">
+  </div>
 
 
-<script type="text/javascript">
-var menuView = function(){
+  <script type=text/javascript>
+      var prepos = 0;
+  $(document).ready(function(){
 
-	if($('.menupop').is(':visible')){
-		$('.menupop').css('display','none');
-	}else{
-		$('.menupop').css('display','block');
-	}
-};
-</script>
-			
-<!-- ÃÖ¼Ò»çÀÌÁî GNB -->
-<div id="header_m">
-<h1><a href="/"><img src="<%=mobileTitleLogoSrc%>" alt="" /></a></h1>
-<h2 class="seem"><a href="javascript:menuView();"><img src="/images/n_common/btn_gnb.png" alt="" /></a></h2>      	
-		
-	<!-- ¸ð¹ÙÀÏ¸Þ´º½ÃÀÛ -->							    
-	<div class="menupop" style="display:none;">
+      $(".go-top").hide(); // íƒ‘ ë²„íŠ¼ ìˆ¨ê¹€
+      $(function () {
 
-		<!--¸ð¹ÙÀÏ·Î±×ÀÎ½ÃÀÛ-->
-		<div class="login_w">
-			<%If Session(DBLeft&"_UserID") = "" then%>
-			<div class="login_bg">
-				<a href="javascript:void(0)" onclick="intergrateLogin('','<%=BackURL%>');"><img src="/images/common/loginicon.png"/> ·Î±×ÀÎ ÇÏ¼¼¿ä</a>
-			</div>
-			<div class="join_bg">
-				<ul>
-					<li><a href="/sub/member/join01.asp">È¸¿ø°¡ÀÔ</a></li>
-					<li><a href="javascript:void(0)" onclick="intergrateLogin('','<%=HostAddress%>/sub/member/edit.asp||<%=BackURL%>');">¸¶ÀÌÆäÀÌÁö</a></li>
-				</ul>
-				<ul>
-					<li><a href="/sub/community/community08_new.asp">ÀÌº¥Æ®</a></li>
-					<li><a href="/sub/community/community01.asp">°øÁö»çÇ×</a></li>
-				</ul>
-			</div>
+          $(window).scroll(function () {
+              prepos
+              if (prepos -$(this).scrollTop()   > 0) { // ìŠ¤í¬ë¡¤ ë‚´ë¦´ í‘œì‹œ
+                  if($(this).scrollTop()>100){
+                  $('.go-top').show();
+                  }
+                  else{
+                      $('.go-top').hide();	
+                  }
+              } else {
+                  $('.go-top').hide();
+              }
+              prepos  = $(this).scrollTop();
+          })
+          $('.go-top').click(function () {
+              $('body,html').animate({
+                  scrollTop: 0
+              }, 600);  // íƒ‘ ì´ë™ ìŠ¤í¬ë¡¤ ì†ë„
+              return false;
+          });
+      });
 
-			<%Else%>
-			<div class="login_bg">
-				<a href="/_ok/member_logout.asp" target="btmiframe"><img src="/images/common/loginicon.png"/> ·Î±×¾Æ¿ô</a>
-			</div>
-			<div class="join_bg">
-				<ul>
-					<li><a href="/sub/member/join01.asp">È¸¿ø°¡ÀÔ</a></li>
-					<li><a href="/sub/member/edit.asp">¸¶ÀÌÆäÀÌÁö</a></li>
-				</ul>
-				<ul>
-					<li><a href="/sub/community/community08_new.asp">ÀÌº¥Æ®</a></li>
-					<li><a href="/sub/community/community01.asp">°øÁö»çÇ×</a></li>
-				</ul>
-			</div>
-			<%End IF%>
-		</div>
-		<!--¸ð¹ÙÀÏ·Î±×ÀÎ³¡-->
-
-		<!--¸ð¹ÙÀÏÄ«Å×°í¸® ½ÃÀÛ-->
-        <script src="/n_js/jquery.accordionMenu.js" type="text/javascript"></script>
-        <script type="text/javascript">
-        $(document).ready(function () {
-            $('ul').accordion();
-        });
-        </script>
-		<div>
-			<ul class="accordion">
-				<li><a href="#menu01">³²¼ºÈ®´ë</a>
-					<ul>	
-						<li><a href="/sub/operation/operation02.asp">- À½°æÈ®´ë</a></li>
-						<li><a href="/sub/operation/operation04.asp">- ±ÍµÎÈ®´ë</a></li>
-						<li><a href="/sub/operation/operation06.asp">- ±æÀÌ¿¬Àå</a></li>
-						<li><a href="/sub/operation/operation07.asp">- Àç°Ç¼ö¼ú</a></li>
-					</ul>
-				</li>
-				<li><a href="#menu02">Á¶·çÅ¬¸®´Ð</a>
-					<ul>
-						<li><a href="/sub/premature/premature01.asp">- ¿øÀÎ¡¤Áø´Ü</a></li>
-						<li><a href="/sub/premature/premature02.asp">- ºñ¼ö¼úÄ¡·á</a></li>
-						<li><a href="/sub/premature/premature03.asp">- ¼ö¼úÄ¡·á</a></li>
-					</ul>
-				  </li>
-				<li><a href="#menu03">¹ß±âºÎÀü</a>
-					<ul>
-						<li><a href="/sub/erectile/erectile01.asp">- ¿øÀÎ¡¤Áø´Ü</a></li>
-						<li><a href="/sub/erectile/erectile04.asp">- ¾à¹°Ä¡·á</a></li>
-						<li><a href="/sub/erectile/erectile07.asp">- Ãæ°ÝÆÄÄ¡·á</a></li>
-						<li><a href="/sub/erectile/erectile02.asp">- ¼ö¼úÄ¡·á</a></li>
-					</ul>
-				  </li>
-				  <li><a href="#menu04">Á¤°ü/Æ÷°æ</a>
-					<ul>
-						<li><a href="/sub/vasectomy/vasectomy03.asp">- À¯·ÎÁøÁ¤°ü¼ö¼ú</a></li>
-						 <li><a href="/sub/vasectomy/vasectomy05.asp">- À¯·ÎÁøÆ÷°æ¼ö¼ú</a></li>
-						 <li><a href="/sub/vasectomy/vasectomy06.asp">- Æ÷°æ¼ö¼úÁ¾·ù</a></li>
-						 <li><a href="/sub/vasectomy/vasectomy09.asp">- Æ÷°æÀç°Ç¼ö¼ú</a></li>
-					</ul>
-				  </li>
-				<li><a href="#menu05">³²¼ºÅ¬¸®´Ð</a>
-					<ul>                        
-						<li><a href="/sub/prostate/prostate02.asp">- Àü¸³¼±</a></li>
-						<li><a href="/sub/prostate/prostate05.asp">- ¿ä·Î°á¼®</a></li>
-						<li><a href="/sub/uroclinic/uroclinic01.asp">- ¹Ù¼¼¸°Á¦°Å</a></li>
-						<li><a href="/sub/uroclinic/uroclinic02.asp">- À½°æ¸¸°îÁõ</a></li>
-						<li><a href="/sub/uroclinic/uroclinic03.asp">- Ä¡°ñÀ¶±â¼ö¼ú</a></li>
-						<li><a href="/sub/uroclinic/uroclinic04.asp">- ÀÎ°ø°íÈ¯¼ú</a></li>
-						<li><a href="/sub/uroclinic/uroclinic06.asp">- ³²¼º¼ºº´</a></li>
-						<li><a href="/sub/uroclinic/uroclinic08.asp">- ¿þµù°ËÁø</a></li>
-					</ul>
-				</li>
-				<li><a href="#menu06">À¯·ÎÁøM TV</a>
-					<ul>
-						<li><a href="/sub/mtv/mtv01.asp">- ÀüÃ¼</a></li>
-						<%  ' MTV ¸µÅ© ÀÌ¹ÌÁö Á¤º¸ °¡Á®¿À±â
-							db2.open dbcon
-							utvSql = ""
-							utvSql = utvSql & "SELECT A.IDX, A.TITLE"
-							utvSql = utvSql & "  FROM UR1_Board2 A"
-							utvSql = utvSql & " WHERE A.C_idx=173 AND A.Board_Etc4='Y'"
-							utvSql = utvSql & " ORDER BY A.NUM DESC"
-							rs2.open utvSql, db2, 1
-							If rs2.eof Or rs2.bof Then
-								utvgrc = -1
-							Else
-								utvgrs = rs2.getrows()
-								utvgrc = UBound(utvgrs,2)
-							End If
-							rs2.close
-							db2.close
-
-							  For i = 0 To utvgrc
-								categoryIdx     = utvgrs(0,i)
-								utvTitle        = utvgrs(1,i) ' title
-
-								If InStr(nowpage, "/utv/utv"&utvAddr) > 0 Or CStr(categoryIdx)=CStr(sbe)  Then
-									S_Board_Etc1 = categoryIdx
-									now_utvAddr = utvAddr
-									now_utvTitle  = utvTitle
-									now_utvTitleImage = utvImgTitle
-								End IF
-
-							%>
-								<li><a href="/sub/mtv/mtv01_all.asp?sidx=<%=categoryIdx%>">- <%=utvTitle%></a></li>
-							<%Next%>
-					</ul>
-				  </li>
-				  <li><a href="#menu07">À¯·ÎÁø¼Ò°³</a>
-					<ul>
-						<li><a href="/sub/info/info01.asp">- À¯·ÎÁø¼Ò°³</a></li>
-						<li><a href="/sub/info/info02.asp">- ÀÇ·áÁø¼Ò°³</a></li>
-						<li><a href="/sub/info/info03_02.asp">- Àü±¹ÁöÁ¡¾È³»</a></li>
-						<li><a href="/sub/info/info09.asp">- Àåºñ¼Ò°³</a></li>
-						<li><a href="/sub/info/info05.asp">- È¯ÀÚÁö¿øÇÁ·Î±×·¥</a></li>
-						<li><a href="/sub/info/info08.asp">- Á¦ÈÞ/°¡¸Í¹®ÀÇ</a></li>
-					</ul>
-				  </li>
-				  <li><a href="#menu08">¿Â¶óÀÎ»ó´ã</a>
-					<ul>
-						<li><a href="/sub/counseling/counseling03.asp">- ¿Â¶óÀÎ¹®ÀÇ</a></li>
-						<li><a href="/sub/counseling/counseling07.asp">- ¼ö¼ú»çÁø½ÅÃ»</a></li>                   
-						<li><a href="/sub/counseling/counseling09.asp">- ¼ö¼úÀüÈÄ»çÁøÈ®ÀÎ</a></li>
-						<li><a href="/sub/counseling/counseling08.asp">- ÀÚ°¡Áø´ÜÇÏ±â</a></li>
-					</ul>
-				  </li>
-				  <li><a href="#menu09">Ä¿¹Â´ÏÆ¼</a>
-					<ul>
-						<li><a href="/sub/community/community01.asp">- °øÁö»çÇ×</a></li>
-						<li><a href="/sub/community/community02.asp">- ¾ð·Ðº¸µµ</a></li>
-						<li><a href="/sub/community/community05.asp">- ¼ö¼úÈÄ±â</a></li>
-						<li><a href="/sub/community/community08_new.asp">- ÀÌº¥Æ®</a></li>
-					</ul>
-				  </li>
-			</ul>
-		</div>
-        <!--//¸ð¹ÙÀÏÄ«Å×°í¸® ¸Þ´º³¡-->							
-		
-		<!--»ó´ã´ëÇ¥ÀüÈ­ ½ÃÀÛ-->
-	  	<div class="menu_tel">
-			<h2>À¯·ÎÁø »ó´ã´ëÇ¥ÀüÈ­</h2>
-			<h3><a href="tel:.1577.3589" target="_blank">1577.3589</a></h3>
-		<p>(24½Ã°£ ÀüÈ­¤ý¿Â¶óÀÎ »ó´ã)</p>
-		</div>
-		<!--//»ó´ã´ëÇ¥ÀüÈ­ ³¡-->
-					
-		<!--¸Þ´ºÇÏ´Ü¾ÆÀÌÄÜ ½ÃÀÛ-->
-		<div class="menupop_menu_sns">
-			<ul>
-				<li onclick="window.open('http://urogynfat.co.kr/')"><img src="/images/n_common/menu_m_sns01.png" alt="Ã¼ÇüÅ¬¸®´Ð"/><p>Ã¼ÇüÅ¬¸®´Ð</p></li>
-				<li onclick="window.open('http://urogyn.co.kr/kakao.asp')"><img src="/images/n_common/menu_m_sns02.png" alt="Ä«Ä«¿ÀÅå"/><p>Ä«Ä«¿ÀÅå</p></li>
-				<li onclick="window.open('http://urogyn.co.kr/naver.asp')"><img src="/images/n_common/menu_m_sns03.png" alt="³×ÀÌ¹öÅåÅå"/><p>³×ÀÌ¹öÅåÅå</p></li>
-				<li onclick="location.href='/sub/mtv/mtv01.asp'"><img src="/images/n_common/menu_m_sns04.png" alt="À¯·ÎÁøTV"/><p>À¯·ÎÁøTV</p></li>
-			</ul>			
-		</div>
-		<!--//¸Þ´ºÇÏ´Ü¾ÆÀÌÄÜ ³¡-->	
-				
-		<!--ÇÏ´Ütxt ½ÃÀÛ-->
-		<div class="menu_txt">
-			<ul>
-				<li onclick="window.open('/sub/member/privacy.asp/')">°³ÀÎÁ¤º¸º¸È£Á¤Ã¥</li>
-				<li onClick="window.open('/sub/member/service.asp/')">ÀÌ¿ë¾à°ü</li>
-				<li onClick="location.href='/sub/info/pay01.asp'">ºñ±Þ¿©Ç×¸ñ</li>
-			</ul>			
-		</div>
-		<!--//ÇÏ´Ütxt ³¡-->
-
-		<p><a href="javascript:menuView();" class="menupop_close"/><img src="/images/common/menupop_close.png" alt="¸Þ´º ´Ý±â" /></a></p>                   
-
-	</div>
-	<!-- // ¸ð¹ÙÀÏ¸Þ´º³¡ -->
-
-	<div class="top_tel"><a href="#dialog5" name="modal5" onMouseDown="javascript:AM_PL('/main/tel2');"><img src="/images/n_common/btn_tel.png" alt="" /></a></div>
-	<!--telÆË¾÷½ÃÀÛ-->							    
-	<div id="boxes">
-
-		<div id="dialog5" class="top_teltxt">
-			<p><img src="/images/common/tel.jpg" alt="" /></p>
-			<!--ÆË¾÷³»¿ë-->
-			<ul>
-				<li><a class="cd-txt" href="tel:1577.3589" target="_blank">´ëÇ¥ »ó´ãÀüÈ­</a></li>
-				<li><a class="cd-txt" href="tel:062.363.6333" target="_blank">±¤ÁÖÁ¡ ÀüÈ­¹®ÀÇ</a></li>
-				<li><a class="cd-txt" href="tel:031.551.0070" target="_blank">±¸¸®Á¡ ÀüÈ­¹®ÀÇ</a></li>
-				<li><a class="cd-txt" href="tel:053.252.0222" target="_blank">´ë±¸Á¡ ÀüÈ­¹®ÀÇ</a></li>
-				<li><a class="cd-txt" href="tel:042.484.4433" target="_blank">´ëÀüÁ¡ ÀüÈ­¹®ÀÇ</a></li>
-				<li><a class="cd-txt" href="tel:051.802.7717" target="_blank">ºÎ»êÁ¡ ÀüÈ­¹®ÀÇ</a></li>
-				<li><a class="cd-txt" href="tel:031.241.5915" target="_blank">¼ö¿øÁ¡ ÀüÈ­¹®ÀÇ</a></li>
-				<li><a class="cd-txt" href="tel:02.981.0488" target="_blank">½Åµµ¸² ÀüÈ­¹®ÀÇ</a></li>
-				<li><a class="cd-txt" href="tel:031.405.1831" target="_blank">¾È»êÁ¡ ÀüÈ­¹®ÀÇ</a></li>
-				<li><a class="cd-txt" href="tel:033.734.7752" target="_blank">¿øÁÖÁ¡ ÀüÈ­¹®ÀÇ</a></li>
-				<li><a class="cd-txt" href="tel:032.466.6776" target="_blank">ÀÎÃµÁ¡ ÀüÈ­¹®ÀÇ</a></li>
-				<!--<li><a class="cd-txt" href="tel:041.558.3335" target="_blank">Ãµ¾ÈÁ¡ ÀüÈ­¹®ÀÇ</a></li>-->
-			</ul>
-			<!--ÆË¾÷³»¿ë//-->
-			<button type="button" id="" class="btn_type4 btn100 close" onclick="#">´Ý±â</button>
-		</div>
-		<div id="mask5"></div>
-	</div>   
-	<!--//telÆË¾÷³¡-->
-		
-</div>
-<!-- //ÃÖ¼Ò»çÀÌÁî GNB -->
-	
-<!--top¹öÆ°½ÃÀÛ-->
-<div class="go-top"  onclick="location.href='#myAnchor'">
-    <img src="/images/n_common/topbt.png" alt="">
-</div>
-
-
-<script type=text/javascript>
-    var prepos = 0;
-$(document).ready(function(){
-
-    $(".go-top").hide(); // Å¾ ¹öÆ° ¼û±è
-    $(function () {
-
-        $(window).scroll(function () {
-            prepos
-            if (prepos -$(this).scrollTop()   > 0) { // ½ºÅ©·Ñ ³»¸± Ç¥½Ã
-                if($(this).scrollTop()>100){
-                $('.go-top').show();
-                }
-                else{
-                    $('.go-top').hide();	
-                }
-            } else {
-                $('.go-top').hide();
-            }
-            prepos  = $(this).scrollTop();
-        })
-        $('.go-top').click(function () {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 600);  // Å¾ ÀÌµ¿ ½ºÅ©·Ñ ¼Óµµ
-            return false;
-        });
-    });
-
-});
-</script>
-<!--top¹öÆ°³¡-->
+  });
+  </script>
+  <!--topë²„íŠ¼ë-->

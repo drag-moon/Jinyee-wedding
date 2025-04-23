@@ -59,7 +59,10 @@
   color: #333333;
 }
 
+.header.hovered .auth-menu span:hover { cursor: pointer; color: #d40000;}
+
 body.subpage .header {
+  border-bottom: 1px solid #e0e0e0;
   position: fixed;
   top: 0;
   left: 0;
@@ -67,6 +70,7 @@ body.subpage .header {
   z-index: 9999;
   background: #fff;            /* hovered 시 배경 */
   transition: none;            /* 원하지 않으면 애니메이션 제거 */
+  color: #333333; 
 }
 body.subpage .header .logo,
 body.subpage .header .pc-menu li,
@@ -208,7 +212,8 @@ body.subpage .header .auth-menu span {
 .header_m .join_bg li { width: 50%; float: left; color: #333333; text-align: center; }
 .header_m .join_bg li:nth-child(1)::after{content: '|'; float: right; color: #dbdbdb}
 .header_m .join_bg li a:link { color: #333333}
-.header_m .join_bg li a:visited { color: #333333}	
+.header_m .join_bg li a:visited { color: #333333}
+.header_m .join_bg li a:hover { color: #333333; cursor: pointer}	
 
 .accordion {list-style-type:none;padding:0;margin:0; clear: both; background: #ffffff;}
 .accordion ul {padding:0;margin:0;width: 100%;}

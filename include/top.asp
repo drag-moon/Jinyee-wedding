@@ -1,177 +1,42 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<html lang="ko">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ê²°ì •ì‚¬</title>
 
-<meta charset="euc-kr">
+  <!-- fullPage.js v2.9.7 (MIT ë¼ì´ì„ ìŠ¤, ë¬´ë£Œ) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.7/dist/jquery.fullpage.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.7/dist/jquery.fullpage.min.js"></script>
 
-<title>°áÁ¤»ç</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
-<link href="/css/common.css?ver=<%=unq_num%>" rel="stylesheet" type="text/css" />	
-<link href="/css/sub.css?ver=<%=unq_num%>" rel="stylesheet" type="text/css" />
-<link href="/css/nav.css?ver=<%=unq_num%>" rel="stylesheet" type="text/css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/sub.css">
+
+  <!-- Swiper (section2 ìŠ¬ë¼ì´ë”) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- ì•„ì½”ë””ì–¸ë©”ë‰´ js -->
+  <script src="/js/jquery.accordionMenu.js"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  
+  <!-- ë©”ì¸ JS -->
+  <script src="/js/main.js"></script>
 	
-<script src="/js/common.js"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-<style type="text/css">
-body,td,th {
-font-family: 'Noto Sans', sans-serif;}
-</style>
-	
-<!--¹ÝÀÀÇü¸ð¹ÙÀÏ ¸Þ´º½ºÅ©¸³Æ®-->
-<script src="/js/jquery-1.7.2.min.js"></script>
-<script src="/js/ui.design.js"></script>
-<script src="/js/jquery.model.js"></script>
-<!--//¹ÝÀÀÇü¸ð¹ÙÀÏ ¸Þ´º½ºÅ©¸³Æ®-->
-	
-<!--ÀüÈ­»ó´ãÆË¾÷-->
-<script type="text/javascript" src="/js/jquery.model2.js"></script>
-<!--//ÀüÈ­»ó´ãÆË¾÷-->
-	
-<!--ÀüÃ¼Ç®´Ù¿î ¸Þ´º½ºÅ©¸³Æ®-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script>
-	if( !window.jQuery ) document.write('<script src="/js/jquery-3.0.0.min.js"><\/script>');
-</script>
-<script src="/n_js/main.js"></script>
-<!--//ÀüÃ¼Ç®´Ù¿î ¸Þ´º½ºÅ©¸³Æ®-->
-
-<!--¸Þ´º½ºÅ©¸³Æ®-->
-<script language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-<script>
-$(document).ready(function() {
-	$(".gnb").hover(
-		function() {
-			$("#snb").stop().slideDown(200);
-		},
-		function() {
-			$("#snb").stop().slideUp(200);
-		}
-	);
-	$("#snb").hover(
-		function() {
-			$("#snb").stop().slideDown(200);
-		},
-		function() {
-			$("#snb").stop().slideUp(200);
-		}
-	);
-});
-</script>
-<!--//¸Þ´º½ºÅ©¸³Æ®-->
-
-<!-- ¸ÞÀÎÀÌ¹ÌÁö -->
-<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="/js/jquery.bxslider.min.js"></script>
-<link href="/css/jquery.bxslider.css?ver=<%=unq_num%>" rel="stylesheet" />
-<script>
-$(document).ready(function(){
-	var slider = $('.bxslider').bxSlider({
-			auto: true, mode:'fade',
-		});
-	var slider_01 =	$('.bxslider_01').bxSlider({
-			auto: true,autoControls: true, mode:'vertical',
-		});
-	var slider_02 =	$('.bxslider_02').bxSlider({
-			auto: true,controls:false,pagerCustom: '#bx-pager1'
-		});
-		// Å¬¸¯½Ã ¸ØÃã Çö»ó ÇØ°á //
-		$(document).on('click','.bx-next, .bx-prev,  #bx-pager1',function() {
-		slider.stopAuto();
-		slider.startAuto();
-		slider_01.stopAuto();
-		slider_01.startAuto();
-		slider_02.stopAuto();
-		slider_02.startAuto();
-		slider_03.stopAuto();
-		slider_03.startAuto();
-		slider_04.stopAuto();
-		slider_04.startAuto();
-		slider_05.stopAuto();
-		slider_05.startAuto();
-	});	
-	
-	var slider = $('.bxslider_utv').bxSlider({
-			auto: true, mode:'horizontal',controls:false,
-		});
-		
-	
-});
-</script>
-<!-- //¸ÞÀÎÀÌ¹ÌÁö -->
-
-
-<!--³»¿ëÅÇ¸Þ´º-->
-
-<script type="text/javascript">
-
-$(document).ready(function() {
-
-	//Default Action
-	$(".tab_content").hide(); //Hide all content
-	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
-	$(".tab_content:first").show(); //Show first tab content
-	
-	//On Click Event
-	$("ul.tabs li").click(function() {
-		$("ul.tabs li").removeClass("active"); //Remove any "active" class
-		$(this).addClass("active"); //Add "active" class to selected tab
-		$(".tab_content").hide(); //Hide all tab content
-		var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
-		$(activeTab).fadeIn(); //Fade in the active content
-		return false;
-	});
-
-});
-</script>
-<!--//³»¿ëÅÇ¸Þ´º-->
-
-<!--½½¶óÀÌµå ½ÃÀÛ-->
-<script src="/js/sub/swiper.min.js"></script>
-<link rel="stylesheet" href="/js/sub/swiper.min.css">
-<!--//½½¶óÀÌµå ³¡-->
-
-<!--ÅÇ¹öÆ° ½ÃÀÛ-->
-<script src="/js/tabcontent.js" type="text/javascript"></script>
-<!--//ÅÇ¹öÆ° ³¡-->
-	
-<!--ÅØ½ºÆ®·Ñ¸µ-->
-<link href="/css/aos.css?ver=<%=unq_num%>" rel="stylesheet" type="text/css" />
-<script src="/js/aos.js"></script>
-<script>
-  AOS.init(
-  { 
-	  anchorPlacement : 'center-bottom',
-  }
-  );
-</script>	
-<!--//ÅØ½ºÆ®·Ñ¸µ-->
-	
-<!--ÆË¾÷ ·¹ÀÌ¾î-->
-<link rel="stylesheet" href="/n_js/needpopup.css">
-<script src="/n_js/needpopup.js"></script>
-<script>  
-    needPopup.config.custom = {
-        'removerPlace': 'outside',
-        'closeOnOutside': false,
-        onShow: function() {
-            console.log('needPopup is shown');
-        },
-        onHide: function() {
-            console.log('needPopup is hidden');
-        }
-    };
-    needPopup.init();
-</script>
-<!--//ÆË¾÷ ·¹ÀÌ¾î-->
-	
-<!--new ÅÇ¹öÆ° ½ÃÀÛ-->
-<script src="/n_js/tabcontent.js" type="text/javascript"></script>	
-<!--//new ÅÇ¹öÆ° ³¡-->
-	
+  <!--ì„œë¸Œë©”ë‰´í’€ë‹¤ìš´-->
+  <script type="text/javascript" src="/js/rjAccordion.js"></script>
+  <script type="text/javascript">
+    $(function() {       
+        $(".submenu1").rjAccordion();
+        $(".submenu2").rjAccordion({toggle:false});          
+    });
+  </script>
+<!--//ì„œë¸Œë©”ë‰´í’€ë‹¤ìš´-->
+</head>

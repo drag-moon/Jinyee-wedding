@@ -141,8 +141,8 @@
     <section class="section section5">
 	  <div class="section5-inner">
         <div class="section5-text">
-          <h2>고객 서비스 센터</h2>
-          <p>고객님들의 편리하고 원활한 이용을 위해<br>다양한 문의사항에 대해 친절히 안내드립니다.</p>
+          <h2 data-aos="fade-up2">고객 서비스 센터</h2>
+          <p data-aos="fade-up2">고객님들의 편리하고 원활한 이용을 위해<br>다양한 문의사항에 대해 친절히 안내드립니다.</p>
         </div>
 			<div class="boxs4 section5-box flex-center flex-wrap">
 				<li>
